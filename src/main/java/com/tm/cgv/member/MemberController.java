@@ -10,12 +10,23 @@ public class MemberController {
 
 	@RequestMapping(value = "join",method = RequestMethod.GET)
 	public void memberJoin() {
-		System.out.println("memberJoin");
+		System.out.println("memberJoinForm");
+	}
+	
+	@RequestMapping(value = "join",method = RequestMethod.POST)
+	public void memberJoin2() {
+		System.out.println("memberJoinDB");
 	}
 	
 	@RequestMapping(value = "login",method = RequestMethod.GET)
 	public void memberLogin() {
-		System.out.println("memberLogin");
+		System.out.println("memberLoginForm");
+	}
+	
+	@RequestMapping(value = "login",method = RequestMethod.POST)
+	public void memberLogin2(String id,String pwd) {
+		System.out.println("memberLoginDB");
+		
 		
 	}
 	
