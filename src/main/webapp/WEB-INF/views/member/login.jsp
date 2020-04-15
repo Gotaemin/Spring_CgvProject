@@ -25,12 +25,12 @@
 			<div class="nav_linemap">
 				<ul>
 					<li>
-						<a href="../main.html">
+						<a href="../">
 							<img alt="go to Home" src="../resources/images/login/btn_home.png">					
 						</a>
 					</li>
 					<li>
-						<a href="login.html">회원 서비스</a>
+						<a href="./login">회원 서비스</a>
 					</li>
 					<li class="last">
 						로그인
@@ -43,19 +43,19 @@
 			<div class="wrap_login">
 				<ul class="tab_menu_round">
 					<li>
-						<a class="lo" href="#">회원가입</a>
+						<a class="lo" href="">로그인</a>
 					</li>
 					<li>
 						<a href="#">비회원 예매확인</a>
 					</li>
 				</ul>
 				<div class="box_login">
-					<form action="#">
+					<form action="./login" method="post">
 						<fieldset>
 							<p>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</p>
 							<div class="login_input">
-								<input type="text">
-								<input type="password">
+								<input type="text" name="id">
+								<input type="password" name="pwd">
 							</div>
 							<button type="submit"><span>로그인</span></button>
 							<div class="save_id">
@@ -75,12 +75,12 @@
 						<strong>CJ ONE 회원이 아니신가요?</strong>
 						<span>회원가입하시고 다양한 혜택을 누리세요!</span>
 						<strong>
-							<a href="join.html" class="round red">
+							<a href="./join" class="round red">
 								<span>CJ ONE 회원가입하기</span>
 							</a>
 						</strong>
 						<em>
-							<a href="#" class="round black">
+							<a href="" class="round black">
 								<span>CJ ONE 멤버쉽이란?</span>
 							</a>
 						</em>

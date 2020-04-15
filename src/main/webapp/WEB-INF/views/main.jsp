@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,18 +22,35 @@ span{
 	<div class="header">
 		<div class="head">
 			
+			
 			<h1 class="animated swing"><a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/images/header/h1_cgv.png" alt="cgvLogo"></a></h1>
 			<div class="header_service">
-				<ul class="util"></ul>
-				<ul class="gnb">
-					<li><a class="login" href="${pageContext.request.contextPath}/member/login"><span>로그인</span></a></li>
-					<li><a class="join" href="${pageContext.request.contextPath}/member/terms"><span>회원가입</span></a></li>
-					<li><a class="mycgv" href="#"><span>MyCGV</span></a></li>
-					<li><a class="vip_lounge" href="#"><span>VIPLOUNGE</span></a></li>
-					<li><a class="club_service" href="#"><span>Club서비스</span></a></li>
-					<li><a class="customer" href="${pageContext.request.contextPath}/bbs/boardList"><span>고객센터</span></a></li>
+					
+				<c:if test="${not empty memberDTO}">
+					<ul class="gnb">
+						<li>
+							<a class="logout" href="${pageContext.request.contextPath}/member/logout" style="width: 43px; background-position: -521px 9px;">
+							<span>로그아웃</span></a>
+						</li>
+						<li><a class="mycgv" href="#"><span>MyCGV</span></a></li>
+						<li><a class="vip_lounge" href="#"><span>VIPLOUNGE</span></a></li>
+						<li><a class="club_service" href="#"><span>Club서비스</span></a></li>
+						<li><a class="customer" href="${pageContext.request.contextPath}/bbs/boardList"><span>고객센터</span></a></li>
+						<li><a class="english_ticketing" href="#"><span>ENGLISHTICKETING</span></a></li>
+					</ul>
+				</c:if>
+				<c:if test="${empty memberDTO}">
+					<ul class="gnb">
+						<li><a class="login" href="${pageContext.request.contextPath}/member/login"><span>로그인</span></a></li>
+						<li><a class="join" href="${pageContext.request.contextPath}/member/terms"><span>회원가입</span></a></li>
+						<li><a class="mycgv" href="#"><span>MyCGV</span></a></li>
+						<li><a class="vip_lounge" href="#"><span>VIPLOUNGE</span></a></li>
+						<li><a class="club_service" href="#"><span>Club서비스</span></a></li>
+						<li><a class="customer" href="${pageContext.request.contextPath}/bbs/boardList"><span>고객센터</span></a></li>
 					<li><a class="english_ticketing" href="#"><span>ENGLISHTICKETING</span></a></li>
 				</ul>
+				</c:if>			
+				
 			</div>
 			<div class="header_menu">
 				<h2>

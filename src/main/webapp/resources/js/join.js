@@ -139,7 +139,7 @@
 //		월 옵션 생성
 		var month_arr = '<option class="opt" selected="selected">월</option>';
 		for(i=1;i<=12;i++){
-			month_arr += '<option class="opt">'+i+'</option>';
+			month_arr += '<option class="opt" value='+ i +'>'+i+'</option>';
 		}
 		ch_month.innerHTML = month_arr;
 		var opt = document.getElementsByClassName("opt");

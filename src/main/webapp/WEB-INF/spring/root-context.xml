@@ -5,4 +5,12 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
+	<bean class="com.tm.cgv.member.MemberDAO" id="memberDAO"></bean>
+	
+	<bean class="com.tm.cgv.member.MemberService" id="memberService">
+		<constructor-arg name="memberDAO" ref="memberDAO"></constructor-arg>
+	</bean>
+	
+	
+	
 </beans>

@@ -24,12 +24,12 @@
 			<div class="nav_linemap">
 				<ul>
 					<li>
-						<a href="../main.html">
+						<a href="../">
 							<img alt="go to Home" src="../resources/images/login/btn_home.png">					
 						</a>
 					</li>
 					<li>
-						<a href="login.html">회원 서비스</a>
+						<a href="./login">회원 서비스</a>
 					</li>
 					<li class="last">
 						회원가입
@@ -46,11 +46,11 @@
 					</li>
 				</ul>
 				<div class="box_login">
-					<form class="box_form" action="../main.html" id="frm">
+					<form class="box_form" action="join" id="frm" method="post">
 						<fieldset>
 							<div class="login_input">
 								<h2>아이디</h2>
-								<input id="userID" class="id check" type="text" style="display: inline-block;">
+								<input id="userID" class="id check" type="text" style="display: inline-block;" name="id">
 								<button type="button" style="display: inline-block; color:#ffffff; height:38px; width: 85px; margin-top: 0px;margin-right: 200px;">중복체크</button>
 								<p id="idc"></p>
 								
@@ -60,30 +60,29 @@
 								<p id="pwd1c"></p>
 								
 								<h2>비밀번호 재확인</h2>
-								<input id="userPWD2" class="check" type="password" style="display: inline-block;">
+								<input id="userPWD2" class="check" type="password" style="display: inline-block;" name="pwd">
 <!-- 								<button type="button" style="display: inline-block; color:#ffffff; height:38px; width: 85px; margin-top: 0px;margin-right: 200px;">확인</button> -->
 								<p id="pwd2c"></p>	
 									
 									
 								<h2>이름</h2>
-								<input id="name" class="text check" type="text">
+								<input id="name" class="text check" type="text" name="name">
 								
 								<h2>생년월일</h2>
 								<div class="ymd">
-									<input id="ch_year" class="text year check" type="text" placeholder="년(4자리)" maxlength="4">
-									<select id="ch_month" class="month check">
-
-
+									<input id="ch_year" class="text year check" type="text" placeholder="년(4자리)" maxlength="4" name="year">
+									<select id="ch_month" class="month check" name="month">
+										
 									</select>
-									<input id="ch_date" class="text day check" type="text" placeholder="일" maxlength="2">
+									<input id="ch_date" class="text day check" type="text" placeholder="일" maxlength="2" name="day">
 								</div>
 								<p id="birthc"></p>	
 								
 								<h2>전화번호</h2>
-								<input id="phone" class="text check" type="text" placeholder="' - ' 없이 입력해 주세요" maxlength="11">
+								<input id="phone" class="text check" type="text" placeholder="' - ' 없이 입력해 주세요" maxlength="11" name="phone">
 								
 								<h2>이메일</h2>
-								<input id="email" class="check" type="email" placeholder="선택입력">
+								<input id="email" class="check" type="email" placeholder="선택입력" name="email">
 							</div>
 						
 						</fieldset>

@@ -26,12 +26,12 @@
 			<div class="nav_linemap">
 				<ul>
 					<li>
-						<a href="../main.html">
+						<a href="../">
 							<img alt="go to Home" src="../resources/images/login/btn_home.png">					
 						</a>
 					</li>
 					<li>
-						<a href="login.html">회원 서비스</a>
+						<a href="login">회원 서비스</a>
 					</li>
 					<li class="last">
 						이용약관
@@ -44,7 +44,7 @@
 			<div class="wrap_login">
 				<ul class="tab_menu_round">
 					<li>
-						<a class="lo" href="#">회원가입</a>
+						<a class="lo" href="./">회원가입</a>
 					</li>
 				</ul>
 				<div class="box_login">
@@ -119,7 +119,7 @@
 		</div>
 		<!-- 다 체크되어있는지 확인 -->
 		<div class="btn-area">
-			<button class="btn_cancle" onclick="location.href='../main.html'"><span>취 소</span></button>
+			<button class="btn_cancle" onclick="location.href='../'"><span>취 소</span></button>
 			<button class="btn_submit" id="btn" type="submit"><span>확  인</span></button>	
 		</div>
 	</div>

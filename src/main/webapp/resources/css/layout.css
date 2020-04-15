@@ -56,12 +56,7 @@ body{
 /* 	border: 1px solid black; */
 }
 
-.util{
-	list-style: none;
-}
-.util li{
-	float: left;
-}
+
 
 .gnb{
 	list-style: none;
@@ -94,6 +89,11 @@ body{
 }
 .gnb li a span{
 	visibility: hidden;
+}
+
+.logout{
+	width: 43px;
+	background-position: -521px 9px;
 }
 .login{
 	width: 29px;
