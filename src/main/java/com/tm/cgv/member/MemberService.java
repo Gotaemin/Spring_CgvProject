@@ -18,4 +18,8 @@ public class MemberService {
 	public MemberDTO memberCheck(String id,String pwd) throws Exception{
 		return memberDAO.memberCheck(id, pwd);
 	}
+	
+	//회원정보 수정
+	
+	//회원 탈퇴
 }

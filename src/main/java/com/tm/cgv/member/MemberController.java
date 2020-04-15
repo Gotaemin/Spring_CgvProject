@@ -18,7 +18,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "terms",method = RequestMethod.GET)
 	public void memberTerms() {
-		System.out.println("memberTerms");
+		//System.out.println("memberTerms");
 	}
 	
 	//회원가입

@@ -13,4 +13,9 @@
 	
 	
 	
+	<bean class="com.tm.cgv.bbs.BbsDAO" id="bbsDAO"></bean>
+	<bean class="com.tm.cgv.bbs.BbsService" id="bbsService">
+		<constructor-arg name="bbsDAO" ref="bbsDAO"></constructor-arg>
+	</bean>
+	
 </beans>

@@ -26,12 +26,12 @@
 			<div class="nav_linemap">
 				<ul>
 					<li>
-						<a href="../main.html">
+						<a href="../">
 							<img alt="go to Home" src="../resources/images/login/btn_home.png">					
 						</a>
 					</li>
 					<li>
-						<a href="http://www.cgv.co.kr/support/">고겍센터</a>
+						<a href="">고겍센터</a>
 					</li>
 					<li class="last">
 						글쓰기
@@ -48,24 +48,24 @@
 					<div class="col_aside">
 						<div class="snb">
 							<ul>
-								<li><a href="#">고객센터 메인<i></i></a></li>
-								<li><a href="#">자주찾는 질문<i></i></a></li>
-								<li><a href="../bbs/boardList.html">공지/뉴스<i></i></a></li>
+								<li><a href="">고객센터 메인<i></i></a></li>
+								<li><a href="">자주찾는 질문<i></i></a></li>
+								<li><a href="/bbs/boardList">공지/뉴스<i></i></a></li>
 								<li class="on"><a href="#">이메일 문의<i></i></a></li>
-								<li><a href="#">분실문 문의<i></i></a></li>
-								<li><a href="#">단체/대관 문의<i></i></a></li>
-								<li><a href="#">대학로 옥탑 예약<i></i></a></li>
+								<li><a href="">분실문 문의<i></i></a></li>
+								<li><a href="">단체/대관 문의<i></i></a></li>
+								<li><a href="">대학로 옥탑 예약<i></i></a></li>
 							</ul>
 						
 						</div>
 						<div class="ad_area">
 							<div class="ad_panner_1">
-								<a href="#">
+								<a href="">
 									<img alt="" src="../resources/images/bbsList/200313_160x300.jpg">
 								</a>
 							</div>
 							<div class="ad_panner_2">
-								<a href="#">
+								<a href="">
 									<img alt="" src="../resources/images/bbsList/0325_160x35.png">
 								</a>
 							</div>
@@ -83,8 +83,9 @@
 						</div>
 						
 						<!----------------------------------------------------------------------------------------------------- contents detail box_bbslist-->
-						<form action="boardList.html">
+						<form action="./boardWrite" method="post">
 							<fieldset>
+								<input type="hidden" value="${memberDTO.id}" name="id">
 								<div class="tbl_write">
 									<p class="tbl_info">
 										체크(<em><img alt="" src="../resources/images/bbsWrite/ico_redstar.png"> </em>)된 항목은 필수 입력 사항입니다.
@@ -96,17 +97,19 @@
 										</colgroup>
 										<tbody>
 											<tr>
-												<th scope="row"><label>아이디 <img alt="" src="../resources/images/bbsWrite/ico_redstar.png"></label></th>
-												<td colspan="3">
-													<!--<strong>고태민</strong>  -->
-													<input id="userID" name="userID" type="text" class="in01 check" style="width: 235px;">
-												</td>
+												<th scope="row"><label>아이디</label></th>
+												<td colspan="3"><strong>${memberDTO.id}</strong></td>
+<!-- 												<th scope="row"><label>아이디 <img alt="" src="../resources/images/bbsWrite/ico_redstar.png"></label></th> -->
+<!-- 												<td colspan="3"> -->
+<!-- 													<strong>고태민</strong>  -->
+<%-- 													<input id="userID" name="id" type="text" class="in01 check" style="width: 235px;" value="${memberDTO.id}"> --%>
+<!-- 												</td> -->
 											</tr>
 											<tr>
 												<th scope="row">휴대전화</th>
-												<td><strong>010-****-8896</strong></td>
+												<td><strong>${memberDTO.phone}</strong></td>
 												<th scope="row">이메일</th>
-												<td><span>rh**als121@naver.com</span></td>
+												<td><span>${memberDTO.email}</span></td>
 											</tr>
 											<tr>
 												<th scope="row">
@@ -139,6 +142,7 @@
 										</tbody>
 									
 									</table>
+									
 								</div>
 								<div class="btn_s">
 									<a href="boardList.html" class="round gray">

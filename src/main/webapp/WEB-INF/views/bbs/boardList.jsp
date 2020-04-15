@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,12 +26,12 @@
 			<div class="nav_linemap">
 				<ul>
 					<li>
-						<a href="../main.html">
+						<a href="../">
 							<img alt="go to Home" src="../resources/images/login/btn_home.png">					
 						</a>
 					</li>
 					<li>
-						<a href="http://www.cgv.co.kr/support/">고겍센터</a>
+						<a href="">고겍센터</a>
 					</li>
 					<li class="last">
 						게시판
@@ -47,24 +48,24 @@
 					<div class="col_aside">
 						<div class="snb">
 							<ul>
-								<li><a href="#">고객센터 메인<i></i></a></li>
-								<li><a href="#">자주찾는 질문<i></i></a></li>
-								<li class="on"><a href="../bbs/boardList.html">공지/뉴스<i></i></a></li>
-								<li><a href="#">이메일 문의<i></i></a></li>
-								<li><a href="#">분실문 문의<i></i></a></li>
-								<li><a href="#">단체/대관 문의<i></i></a></li>
-								<li><a href="#">대학로 옥탑 예약<i></i></a></li>
+								<li><a href="">고객센터 메인<i></i></a></li>
+								<li><a href="">자주찾는 질문<i></i></a></li>
+								<li class="on"><a href="/bbs/boardList">공지/뉴스<i></i></a></li>
+								<li><a href="">이메일 문의<i></i></a></li>
+								<li><a href="">분실문 문의<i></i></a></li>
+								<li><a href="">단체/대관 문의<i></i></a></li>
+								<li><a href="">대학로 옥탑 예약<i></i></a></li>
 							</ul>
 						
 						</div>
 						<div class="ad_area">
 							<div class="ad_panner_1">
-								<a href="#">
+								<a href="">
 									<img alt="" src="../resources/images/bbsList/200313_160x300.jpg">
 								</a>
 							</div>
 							<div class="ad_panner_2">
-								<a href="#">
+								<a href="">
 									<img alt="" src="../resources/images/bbsList/0325_160x35.png">
 								</a>
 							</div>
@@ -96,7 +97,7 @@
 						<div class="wrap_tab">
 							<ul class="tab_menu_round">
 								<li>
-									<a class="lo" href="#">전체</a>
+									<a class="lo" href="">전체</a>
 								</li>
 							</ul>
 							
@@ -104,18 +105,18 @@
 						
 						<!----------------------------------------------------------------------------------------------------- contents detail search_result-->
 						<div class="search_result">
-							총<span class="num">2840건</span>이 검색되었습니다.
+							총<span class="num">${fn:length(bbsList)}</span>건이 검색되었습니다.
 						</div>
 						
 						
 						<!----------------------------------------------------------------------------------------------------- contents detail box_bbslist-->
 						<div class="box_bbsList">
-							<table  class="tbl_list">
+							<table class="tbl_list">
 								<colgroup>
 									<col style="width: 50px;">
 									<col style="width: 80px;">
 									<col style="width: 570px;">
-									<col style="width: 64px;">
+									<col style="width: 75px;">
 									<col style="width: 60px;">
 								</colgroup>
 								<thead>
@@ -127,185 +128,18 @@
 										<th scope="col">조회수</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr><tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
-									<tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr><tr class="first">
-										<td>2840</td>
-										<td>[극장]</td>
-										<td class="txt">
-											<a href="#">[씨네드쉐프 센텀시티] 영업중단 안내</a>
-										</td>
-										<td>2020.03.26</td>
-										<td class="num">19</td>
-									</tr>
+								<tbody id="list_body">
+									<c:forEach var="list" items="${bbsList}" >
+										<tr class="first">
+											<td>${list.no }</td>
+											<td>[극장]</td>
+											<td class="txt">
+												<a href="#">${list.title }</a>
+											</td>
+											<td>${list.hiredate }</td>
+											<td class="num">${list.count}</td>
+										</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 							
@@ -327,7 +161,7 @@
 							</ul>
 							<button type="button" class="btn_page next">다음</button>
 							<button type="button" class="btn_page end">끝</button>
-							<a href="./boardWrite"><button  type="button" class="round inred">글쓰기</button></a>
+							<a href=""><button id="btn-submit" type="button" class="round inred">글쓰기</button></a>
 							
 						</div>
 					</div>
@@ -344,6 +178,20 @@
 	<!-- 사이드바 ---------------------------------------------------------------------------------------------->
 	<c:import url="../template/sidebar.jsp"></c:import>
 </div>
+
+
+<script type="text/javascript">
+	$("#btn-submit").click(function() {
+		var check = confirm("로그인해야 등록가능합니다.");
+		
+		if(check){
+			alert("페이지이동한다");
+			location.href='../member/login';
+		}
+	});
+
+</script>
+
 
 
 </body>

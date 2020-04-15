@@ -1,0 +1,46 @@
+package com.tm.cgv.bbs;
+
+import java.sql.Date;
+
+public class BbsDTO {
+	
+	private int no;
+	private String title;
+	private Date hiredate;
+	private int count;
+	private String contents;
+	
+	
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public Date getHiredate() {
+		return hiredate;
+	}
+	public void setHiredate(Date hiredate) {
+		this.hiredate = hiredate;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public String getContents() {
+		return contents;
+	}
+	public void setContents(String contents) {
+		this.contents = contents;
+	}
+	
+	
+}
