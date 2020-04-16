@@ -101,7 +101,7 @@
 								
 								<div class="bbs_btn">
 									<button type="button" class="round inblack" id="btn-list"><span>목록으로</span></button>
-									<a href="./boardDelete?no=${bbsDTO.no}"><button type="button" class="round inred" id="btn-delete"><span>삭제하기</span></button></a>
+									<button type="button" class="round inred" id="btn-delete"><span>삭제하기</span></button>
 									<a href="./boardUpdate?no=${bbsDTO.no}"><button type="button" class="round inred" id="btn-update"><span>수정하기</span></button></a>
 								</div>
 							</div>
@@ -126,7 +126,12 @@
 		location.href="./boardList";
 	});
 	
-	
+	$("#btn-delete").click(function() {
+		var check = confirm("정말 삭제하시겠습니까?");
+		if(check){
+			location.href="boardDelete?no=${bbsDTO.no}";
+		}
+	})
 
 </script>
 

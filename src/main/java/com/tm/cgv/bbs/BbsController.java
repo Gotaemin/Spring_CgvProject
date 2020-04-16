@@ -74,12 +74,10 @@ public class BbsController {
 		int result = bbsService.bbsDelete(no);
 		
 		if(result>0) {
-			model.addAttribute("msg", "정말 삭제하시겠습니까?");
-			model.addAttribute("path", "redirect:boardList");
-			return "common/confirm";
+			return "redirect:boardList";
 		}
 		
-		return "boardSelect";
+		return "boardSelect?no="+no;
 	}
 	
 	
