@@ -12,10 +12,29 @@
 	</bean>
 	
 	
-	
 	<bean class="com.tm.cgv.bbs.BbsDAO" id="bbsDAO"></bean>
 	<bean class="com.tm.cgv.bbs.BbsService" id="bbsService">
 		<constructor-arg name="bbsDAO" ref="bbsDAO"></constructor-arg>
+	</bean>
+	
+	
+	<!-- 드라이버 연동 Connection -->
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+		<property name="username" value="tm"></property>
+		<property name="password" value="tm"></property>
+		<property name="url" value="jdbc:oracle:thin:@192.168.56.101:1521:xe"></property>
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+	</bean>
+	
+	<!-- mapper와 Connection을 spring가 확인 할수 있도록 설정  -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mapperLocations" value="classpath:DB/mapper/*Mapper.xml"></property>
+	</bean>
+	
+	<!--  -->
+	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
 	</bean>
 	
 </beans>

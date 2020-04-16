@@ -161,7 +161,7 @@
 							</ul>
 							<button type="button" class="btn_page next">다음</button>
 							<button type="button" class="btn_page end">끝</button>
-							<a href="./boardWrite"><button id="btn-submit" type="button" class="round inred">글쓰기</button></a>
+							<a href="../member/loginCheck"><button id="btn-submit" type="button" class="round inred">글쓰기</button></a>
 							
 						</div>
 					</div>

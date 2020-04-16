@@ -5,10 +5,42 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.tm.cgv.board.BoardDAO;
+import com.tm.cgv.board.BoardDTO;
 import com.tm.util.DBConnect;
 
-public class BbsDAO {
+@Repository
+public class BbsDAO implements BoardDAO{
 
+	@Autowired
+	private SqlSession sqlSession;
+	private final String NAMESPACE = "com.tm.cgv.bbs.BbsDAO.";
+	
+	
+//	//글 목록 리스트 조회
+//	@Override
+//	public List<BoardDTO> boardList() throws Exception {
+//		return null;
+//	}
+//
+//	//글 목록 하나 조회
+//	@Override
+//	public BoardDTO boardSelect(int no) throws Exception {
+//		return null;
+//	}
+
+	//글 등록
+	@Override
+	public int boardWrite(BoardDTO boardDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"bbsWrite", boardDTO);
+	}
+
+	
+	
 	//글 목록 하나 조회
 	public BbsDTO bbsSelect(int no) throws Exception{
 		Connection conn = DBConnect.getConnection();
@@ -39,28 +71,6 @@ public class BbsDAO {
 		return bbsDTO;
 		
 	}
-	
-	//글 등록
-	public int bbsWrite(String id,String title,String contents) throws Exception{
-		Connection conn = DBConnect.getConnection();
-		PreparedStatement pstmt = null;
-		
-		String sql = "insert into bbs values (bbs_seq.nextVal,?,sysdate,0,?,?)"; //title,contents,id
-		
-		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, title);
-		pstmt.setString(2, contents);
-		pstmt.setString(3, id);
-		
-		int result = pstmt.executeUpdate();
-		
-		pstmt.close();
-		conn.close();
-		
-		return result;
-				
-	}
-	
 	//글 목록 리스트 조회
 	public ArrayList<BbsDTO> bbsListSelect() throws Exception{
 		ArrayList<BbsDTO> bbsList = new ArrayList<BbsDTO>();

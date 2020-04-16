@@ -98,13 +98,15 @@
 										${bbsDTO.contents}
 									</p>
 								</div>
+								
 								<div class="bbs_btn">
 									<button type="button" class="round inblack" id="btn-list"><span>목록으로</span></button>
+									<a href="./boardDelete?no=${bbsDTO.no}"><button type="button" class="round inred" id="btn-delete"><span>삭제하기</span></button></a>
+									<a href="./boardUpdate?no=${bbsDTO.no}"><button type="button" class="round inred" id="btn-update"><span>수정하기</span></button></a>
 								</div>
 							</div>
-						
+							
 					</div>
-				
 				</div>
 			</div>
 		</div>
@@ -123,6 +125,8 @@
 	$("#btn-list").click(function() {
 		location.href="./boardList";
 	});
+	
+	
 
 </script>
 

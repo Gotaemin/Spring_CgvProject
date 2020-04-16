@@ -34,7 +34,6 @@
 
 .bbs_btn{
 	margin: 20px 0 30px 0;
-	text-align: right;
 }
 
 .round{
@@ -57,6 +56,19 @@
 	border: 1px solid #5b5b58;
 }
 
+.round.inred {
+	float: right;
+	margin-left:5px;
+	background: #e71a0f;
+	border: 2px solid #e71a0f;
+	color: #ffffff;
+	line-height: 21px;
+}
+
+.inred > *{
+	padding: 2px 12px;
+/* 	border: 1px solid #ffffff; */
+}
 
 
 

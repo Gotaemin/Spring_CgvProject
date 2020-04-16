@@ -23,14 +23,12 @@ public class BbsController {
 	@RequestMapping(value = "boardList",method = RequestMethod.GET)
 	public void bbsList(Model model) throws Exception{
 		//System.out.println("bbs List");
-		
 		ArrayList<BbsDTO> bbsList = bbsService.bbsListSelect();
 		
 		if(bbsList != null) {
 			model.addAttribute("bbsList", bbsList);
 		}
 	}
-	
 	
 	//글 작성(등록)(GET/POST)
 	@RequestMapping(value = "boardWrite",method = RequestMethod.GET)
@@ -41,17 +39,19 @@ public class BbsController {
 	}
 	@RequestMapping(value = "boardWrite",method = RequestMethod.POST)
 	public String bbsWrite2(String id,String title,String contents) throws Exception{
-		//System.out.println("bbs Write Form");
+		System.out.println("bbs Write Form");
 		
-		int result = bbsService.bbsWrite(id, title, contents);
+		BbsDTO bbsDTO = new BbsDTO();
+		bbsDTO.setId(id);
+		bbsDTO.setTitle(title);
+		bbsDTO.setContents(contents);
+		
+		int result = bbsService.bbsWrite(bbsDTO);
 		
 		if(result > 0) {
-			
 			return "redirect:boardList";
 		}
-		
 		return "boardWrite";
-		
 	}
 	
 	
@@ -64,13 +64,29 @@ public class BbsController {
 		if(bbsDTO != null) {
 			model.addAttribute("bbsDTO", bbsDTO);
 		}
-		
 	}
 	
 	
 	//글 삭제(GET)
+	@RequestMapping(value = "boardDelete")
+	public void bbsDelete(int no) throws Exception{
+		
+	}
+	
+	
 	
 	//글 수정(GET/POST)
+	@RequestMapping(value = "boardUpdate")
+	public void bbsUpdate(int no,Model model,HttpSession session) throws Exception{
+		//기존값 읽어오기
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("memberDTO");
+		model.addAttribute("memberDTO", memberDTO);
+	}
+	@RequestMapping(value = "boardUpdate",method = RequestMethod.POST)
+	public void bbsUpdate2() throws Exception{
+		//DB전달
+	}
+	
 	
 	
 }

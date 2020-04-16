@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <link href="../resources/css/bbsLayout.css" rel="stylesheet" type="text/css">
-<link href="../resources/css/bbsWrite.css" rel="stylesheet" type="text/css">
 <link href="../resources/css/layout.css" rel="stylesheet" type="text/css">
 
+<link href="../resources/css/bbsWrite.css" rel="stylesheet" type="text/css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Insert title here</title>

@@ -8,14 +8,18 @@
 </head>
 <body>
 
-
 <script type="text/javascript">
 
-	alert('${msg}');
-	alert('${path}');
+	var check = confirm('${msg}');
 	
-	location.href = '${path}';
+	if(check){
+		location.href = '${path}';
+	}else{
+		history.back();
+	}
+	
 	
 </script>	
+
 </body>
 </html>

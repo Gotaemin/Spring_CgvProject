@@ -2,8 +2,13 @@ package com.tm.cgv.bbs;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class BbsService {
 
+	@Autowired
 	private BbsDAO bbsDAO;
 	
 	public BbsService(BbsDAO bbsDAO) {
@@ -21,7 +26,10 @@ public class BbsService {
 	}
 	
 	//글 등록
-	public int bbsWrite(String id,String title,String contents) throws Exception{
-		return bbsDAO.bbsWrite(id, title, contents);
+//	public int bbsWrite(BoardDTO boardDTO) throws Exception{
+//		return bbsDAO.boardWrite(boardDTO);
+//	}
+	public int bbsWrite(BbsDTO bbsDTO) throws Exception{
+		return bbsDAO.boardWrite(bbsDTO);
 	}
 }
