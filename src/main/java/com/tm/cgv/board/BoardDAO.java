@@ -1,14 +1,17 @@
 package com.tm.cgv.board;
 
 public interface BoardDAO {
-//	//List
+	//List
 //	public List<BoardDTO> boardList() throws Exception;
-//	
-//	//Select
+	
+	//Select
 //	public BoardDTO boardSelect(int no) throws Exception;
 	
 	//Write
 	public int boardWrite(BoardDTO boardDTO) throws Exception;
+	
+	//delete
+	public int boardDelete(int no) throws Exception;
 	
 	
 }

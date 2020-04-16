@@ -26,10 +26,12 @@ public class BbsService {
 	}
 	
 	//글 등록
-//	public int bbsWrite(BoardDTO boardDTO) throws Exception{
-//		return bbsDAO.boardWrite(boardDTO);
-//	}
 	public int bbsWrite(BbsDTO bbsDTO) throws Exception{
 		return bbsDAO.boardWrite(bbsDTO);
+	}
+	
+	//글 삭제
+	public int bbsDelete(int no) throws Exception{
+		return bbsDAO.boardDelete(no);
 	}
 }

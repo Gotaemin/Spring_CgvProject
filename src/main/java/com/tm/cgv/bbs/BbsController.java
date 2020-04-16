@@ -58,7 +58,7 @@ public class BbsController {
 	//글 상세 정보(GET)
 	@RequestMapping(value = "boardSelect")
 	public void bbsSelect(int no,Model model) throws Exception{
-		System.out.println("bbsSelect");
+		//System.out.println("bbsSelect");
 		
 		BbsDTO bbsDTO = bbsService.bbsSelect(no);
 		if(bbsDTO != null) {
@@ -69,8 +69,17 @@ public class BbsController {
 	
 	//글 삭제(GET)
 	@RequestMapping(value = "boardDelete")
-	public void bbsDelete(int no) throws Exception{
+	public String bbsDelete(int no,Model model) throws Exception{
+		System.out.println("bbsDelete: no:"+no);
+		int result = bbsService.bbsDelete(no);
 		
+		if(result>0) {
+			model.addAttribute("msg", "정말 삭제하시겠습니까?");
+			model.addAttribute("path", "redirect:boardList");
+			return "common/confirm";
+		}
+		
+		return "boardSelect";
 	}
 	
 	

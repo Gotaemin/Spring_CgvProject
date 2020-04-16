@@ -9,4 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into bbs values (bbs_seq.nextVal,#{title},sysdate,0,#{contents},#{id})
 	</insert>
 
+	<delete id="bbsDelete" parameterType="java.lang.Integer">
+		delete from bbs where no = #{no}
+	</delete>
 </mapper>

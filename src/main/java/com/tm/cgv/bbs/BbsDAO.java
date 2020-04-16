@@ -38,7 +38,12 @@ public class BbsDAO implements BoardDAO{
 	public int boardWrite(BoardDTO boardDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"bbsWrite", boardDTO);
 	}
-
+	
+	//글 삭제
+	@Override
+	public int boardDelete(int no) throws Exception {
+		return sqlSession.delete(NAMESPACE+"bbsDelete", no);
+	}
 	
 	
 	//글 목록 하나 조회
