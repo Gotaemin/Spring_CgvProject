@@ -9,8 +9,15 @@ public class BbsDTO {
 	private Date hiredate;
 	private int count;
 	private String contents;
+	private String id;
 	
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public int getNo() {
 		return no;
 	}

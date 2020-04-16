@@ -56,6 +56,14 @@ public class BbsController {
 	
 	
 	//글 상세 정보(GET)
+	@RequestMapping(value = "boardSelect")
+	public void bbsSelect() {
+		System.out.println("bbsSelect");
+		
+		
+		
+	}
+	
 	
 	//글 삭제(GET)
 	

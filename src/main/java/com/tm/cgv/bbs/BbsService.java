@@ -10,6 +10,11 @@ public class BbsService {
 		this.bbsDAO = bbsDAO;
 	}
 	
+	//하나의 글 조회 
+	public BbsDTO bbsSelect(int no) throws Exception{
+		return bbsDAO.bbsSelect(no);
+	}
+	
 	//글 목록 조회
 	public ArrayList<BbsDTO> bbsListSelect() throws Exception{
 		return bbsDAO.bbsListSelect();

@@ -131,10 +131,10 @@
 								<tbody id="list_body">
 									<c:forEach var="list" items="${bbsList}" >
 										<tr class="first">
-											<td>${list.no }</td>
+											<td>${list.no}</td>
 											<td>[극장]</td>
 											<td class="txt">
-												<a href="#">${list.title }</a>
+												<a href="./boardSelect?no=${list.no}">${list.title }</a>
 											</td>
 											<td>${list.hiredate }</td>
 											<td class="num">${list.count}</td>
@@ -161,7 +161,7 @@
 							</ul>
 							<button type="button" class="btn_page next">다음</button>
 							<button type="button" class="btn_page end">끝</button>
-							<a href=""><button id="btn-submit" type="button" class="round inred">글쓰기</button></a>
+							<a href="./boardWrite"><button id="btn-submit" type="button" class="round inred">글쓰기</button></a>
 							
 						</div>
 					</div>
@@ -181,14 +181,14 @@
 
 
 <script type="text/javascript">
-	$("#btn-submit").click(function() {
-		var check = confirm("로그인해야 등록가능합니다.");
+// 	$("#btn-submit").click(function() {
+// 		var check = confirm("로그인해야 등록가능합니다.");
 		
-		if(check){
-			alert("페이지이동한다");
-			location.href='../member/login';
-		}
-	});
+// 		if(check){
+// 			alert("페이지이동한다");
+// 			location.href='../member/login';
+// 		}
+// 	});
 
 </script>
 

@@ -9,6 +9,37 @@ import com.tm.util.DBConnect;
 
 public class BbsDAO {
 
+	//글 목록 하나 조회
+	public BbsDTO bbsSelect(int no) throws Exception{
+		Connection conn = DBConnect.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		BbsDTO bbsDTO = new BbsDTO();
+		
+		String sql = "select * from bbs where no = ?";
+		
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, no);
+		
+		rs = pstmt.executeQuery();
+		
+		if(rs.next()) {
+			bbsDTO.setNo(rs.getInt(1));
+			bbsDTO.setTitle(rs.getString(2));
+			bbsDTO.setHiredate(rs.getDate(3));
+			bbsDTO.setCount(rs.getInt(4));
+			bbsDTO.setContents(rs.getString(5));
+			bbsDTO.setContents(rs.getString(6));
+		}
+		rs.close();
+		pstmt.close();
+		conn.close();
+		
+		return bbsDTO;
+		
+	}
+	
 	//글 등록
 	public int bbsWrite(String id,String title,String contents) throws Exception{
 		Connection conn = DBConnect.getConnection();
@@ -51,6 +82,7 @@ public class BbsDAO {
 			bbsDTO.setHiredate(rs.getDate(3));
 			bbsDTO.setCount(rs.getInt(4));
 			bbsDTO.setContents(rs.getString(5));
+			bbsDTO.setId(rs.getString(6));
 			
 			bbsList.add(bbsDTO);
 		}
