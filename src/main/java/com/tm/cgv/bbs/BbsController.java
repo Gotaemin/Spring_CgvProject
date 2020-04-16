@@ -57,10 +57,13 @@ public class BbsController {
 	
 	//글 상세 정보(GET)
 	@RequestMapping(value = "boardSelect")
-	public void bbsSelect() {
+	public void bbsSelect(int no,Model model) throws Exception{
 		System.out.println("bbsSelect");
 		
-		
+		BbsDTO bbsDTO = bbsService.bbsSelect(no);
+		if(bbsDTO != null) {
+			model.addAttribute("bbsDTO", bbsDTO);
+		}
 		
 	}
 	

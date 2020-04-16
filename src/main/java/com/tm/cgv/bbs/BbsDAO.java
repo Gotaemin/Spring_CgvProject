@@ -30,7 +30,7 @@ public class BbsDAO {
 			bbsDTO.setHiredate(rs.getDate(3));
 			bbsDTO.setCount(rs.getInt(4));
 			bbsDTO.setContents(rs.getString(5));
-			bbsDTO.setContents(rs.getString(6));
+			bbsDTO.setId(rs.getString(6));
 		}
 		rs.close();
 		pstmt.close();

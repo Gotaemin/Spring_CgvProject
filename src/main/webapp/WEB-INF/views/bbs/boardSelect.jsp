@@ -10,8 +10,9 @@
 <link href="../resources/css/bbsLayout.css" rel="stylesheet" type="text/css">
 <link href="../resources/css/layout.css" rel="stylesheet" type="text/css">
 
-
 <link href="../resources/css/bbsSelect.css" rel="stylesheet" type="text/css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -84,8 +85,8 @@
 						</div>
 							<div class="tbl_write">
 								<div class="tbl_info">
-									<p class="tbl_info_left">[극장][시흥]영업정지안내</p>
-									<p class="tbl_info_right">등록일 2018.02.12 조회수 20</p>
+									<p class="tbl_info_left">[극장] ${bbsDTO.title}</p>
+									<p class="tbl_info_right">등록자 ${bbsDTO.id} 등록일 ${bbsDTO.hiredate} 조회수 ${bbsDTO.count}</p>
 								</div>
 								<div class="bbs_contents">
 									<p>내용 입력<br>내용입력합니다.
@@ -94,10 +95,11 @@
 										내용입력<br>
 										내용입력<br>
 										내용입력<br>
+										${bbsDTO.contents}
 									</p>
 								</div>
 								<div class="bbs_btn">
-									<button type="button" class="round inblack"><span>목록으로</span></button>
+									<button type="button" class="round inblack" id="btn-list"><span>목록으로</span></button>
 								</div>
 							</div>
 						
@@ -116,5 +118,33 @@
 	<c:import url="../template/sidebar.jsp"></c:import>
 </div>
 
+
+<script type="text/javascript">
+	$("#btn-list").click(function() {
+		location.href="./boardList";
+	});
+
+</script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
