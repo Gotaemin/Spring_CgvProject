@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tm.cgv.Info.InfoDTO;
+
 @Controller
 @RequestMapping(value = "/member/**")
 public class MemberController {
@@ -40,7 +42,7 @@ public class MemberController {
 		memberDTO.setPhone(phone);
 		memberDTO.setEmail(email);
 
-		int result = memberService.memberJoin(memberDTO);
+		int result = memberService.infoJoin(memberDTO);
 
 		String msg = "회원가입에 실패하였습니다.";
 		String path = "/member/join";
@@ -69,11 +71,16 @@ public class MemberController {
 	public String memberLogin2(String id, String pwd, HttpSession session) throws Exception {
 		// System.out.println("memberLoginDB");
 
-		MemberDTO memberDTO = memberService.memberCheck(id, pwd);
+		
+		InfoDTO infoDTO = new InfoDTO();
+		infoDTO.setId(id);
+		infoDTO.setPwd(pwd);
+		
+		infoDTO = memberService.infoLogin(infoDTO);
 
 		String command = "/member/login";
-		if (memberDTO != null) {
-			session.setAttribute("memberDTO", memberDTO);
+		if (infoDTO != null) {
+			session.setAttribute("memberDTO", infoDTO);
 			command = "redirect:/";
 		}
 		return command;

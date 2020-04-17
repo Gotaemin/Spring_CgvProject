@@ -1,16 +1,32 @@
 package com.tm.cgv.member;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.tm.util.DBConnect;
+import com.tm.cgv.Info.InfoDAO;
+import com.tm.cgv.Info.InfoDTO;
 
 @Repository
-public class MemberDAO {
+public class MemberDAO implements InfoDAO{
+
+	@Autowired
+	private SqlSession sqlSession;
+	private final String NAMESPACE = "com.tm.cgv.member.MemberDAO.";
 	
+	
+	@Override
+	public int infoJoin(InfoDTO infoDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"infoJoin", infoDTO);
+	}
+	@Override
+	public InfoDTO infoLogin(InfoDTO infoDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"infoLogin", infoDTO);
+	}
+	
+	
+	
+/*
 	//회원가입
 	public int memberJoin(MemberDTO memberDTO) throws Exception{
 		Connection conn = DBConnect.getConnection();
@@ -82,5 +98,5 @@ public class MemberDAO {
 //			e.printStackTrace();
 //		}
 //	}
-
+*/
 }
