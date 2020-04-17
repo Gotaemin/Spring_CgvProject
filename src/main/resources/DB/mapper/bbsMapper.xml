@@ -12,4 +12,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="bbsDelete" parameterType="java.lang.Integer">
 		delete from bbs where no = #{no}
 	</delete>
+	
+	<select id="bbsList" resultType="com.tm.cgv.bbs.BbsDTO">
+		select * from bbs order by no desc	
+	</select>
+	
+	<select id="bbsSelect" parameterType="java.lang.Integer" resultType="com.tm.cgv.bbs.BbsDTO">
+		select * from bbs where no = #{no}
+	</select>
 </mapper>

@@ -101,8 +101,12 @@
 								
 								<div class="bbs_btn">
 									<button type="button" class="round inblack" id="btn-list"><span>목록으로</span></button>
-									<button type="button" class="round inred" id="btn-delete"><span>삭제하기</span></button>
-									<a href="./boardUpdate?no=${bbsDTO.no}"><button type="button" class="round inred" id="btn-update"><span>수정하기</span></button></a>
+									
+									<c:if test="${bbsDTO.id eq memberDTO.id }">
+										<button type="button" class="round inred" id="btn-delete"><span>삭제하기</span></button>
+										<a href="./boardUpdate?no=${bbsDTO.no}"><button type="button" class="round inred" id="btn-update"><span>수정하기</span></button></a>
+									</c:if>
+									
 								</div>
 							</div>
 							

@@ -2,7 +2,7 @@ package com.tm.cgv.board;
 
 import java.util.List;
 
-public interface BoardDAO {
+public interface BoardService {
 	// List
 	public List<BoardDTO> boardList() throws Exception;
 

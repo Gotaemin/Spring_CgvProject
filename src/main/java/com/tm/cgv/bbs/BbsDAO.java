@@ -1,9 +1,6 @@
 package com.tm.cgv.bbs;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import com.tm.cgv.board.BoardDAO;
 import com.tm.cgv.board.BoardDTO;
-import com.tm.util.DBConnect;
 
 @Repository
 public class BbsDAO implements BoardDAO{
@@ -21,17 +17,17 @@ public class BbsDAO implements BoardDAO{
 	private final String NAMESPACE = "com.tm.cgv.bbs.BbsDAO.";
 	
 	
-//	//글 목록 리스트 조회
-//	@Override
-//	public List<BoardDTO> boardList() throws Exception {
-//		return null;
-//	}
-//
-//	//글 목록 하나 조회
-//	@Override
-//	public BoardDTO boardSelect(int no) throws Exception {
-//		return null;
-//	}
+	//글 목록 리스트 조회
+	@Override
+	public List<BoardDTO> boardList() throws Exception {
+		return sqlSession.selectList(NAMESPACE+"bbsList");
+	}
+
+	//글 목록 하나 조회
+	@Override
+	public BoardDTO boardSelect(int no) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"bbsSelect", no);
+	}
 
 	//글 등록
 	@Override
@@ -45,7 +41,7 @@ public class BbsDAO implements BoardDAO{
 		return sqlSession.delete(NAMESPACE+"bbsDelete", no);
 	}
 	
-	
+/*
 	//글 목록 하나 조회
 	public BbsDTO bbsSelect(int no) throws Exception{
 		Connection conn = DBConnect.getConnection();
@@ -108,4 +104,6 @@ public class BbsDAO implements BoardDAO{
 		
 		return bbsList;
 	}
+	
+*/
 }

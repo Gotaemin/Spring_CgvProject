@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="../resources/css/bbsList.css" rel="stylesheet" type="text/css">
+
 <link href="../resources/css/bbsLayout.css" rel="stylesheet" type="text/css">
 <link href="../resources/css/layout.css" rel="stylesheet" type="text/css">
 
@@ -180,17 +181,6 @@
 </div>
 
 
-<script type="text/javascript">
-// 	$("#btn-submit").click(function() {
-// 		var check = confirm("로그인해야 등록가능합니다.");
-		
-// 		if(check){
-// 			alert("페이지이동한다");
-// 			location.href='../member/login';
-// 		}
-// 	});
-
-</script>
 
 
 

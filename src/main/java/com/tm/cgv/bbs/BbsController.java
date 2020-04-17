@@ -1,6 +1,6 @@
 package com.tm.cgv.bbs;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.tm.cgv.board.BoardDTO;
 import com.tm.cgv.member.MemberDTO;
 
 @Controller
@@ -23,7 +24,7 @@ public class BbsController {
 	@RequestMapping(value = "boardList",method = RequestMethod.GET)
 	public void bbsList(Model model) throws Exception{
 		//System.out.println("bbs List");
-		ArrayList<BbsDTO> bbsList = bbsService.bbsListSelect();
+		List<BoardDTO> bbsList = bbsService.boardList();
 		
 		if(bbsList != null) {
 			model.addAttribute("bbsList", bbsList);
@@ -46,7 +47,7 @@ public class BbsController {
 		bbsDTO.setTitle(title);
 		bbsDTO.setContents(contents);
 		
-		int result = bbsService.bbsWrite(bbsDTO);
+		int result = bbsService.boardWrite(bbsDTO);
 		
 		if(result > 0) {
 			return "redirect:boardList";
@@ -60,7 +61,7 @@ public class BbsController {
 	public void bbsSelect(int no,Model model) throws Exception{
 		//System.out.println("bbsSelect");
 		
-		BbsDTO bbsDTO = bbsService.bbsSelect(no);
+		BoardDTO bbsDTO = bbsService.boardSelect(no);
 		if(bbsDTO != null) {
 			model.addAttribute("bbsDTO", bbsDTO);
 		}
@@ -71,7 +72,7 @@ public class BbsController {
 	@RequestMapping(value = "boardDelete")
 	public String bbsDelete(int no,Model model) throws Exception{
 		System.out.println("bbsDelete: no:"+no);
-		int result = bbsService.bbsDelete(no);
+		int result = bbsService.boardDelete(no);
 		
 		if(result>0) {
 			return "redirect:boardList";

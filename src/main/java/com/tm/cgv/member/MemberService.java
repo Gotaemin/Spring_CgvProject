@@ -1,13 +1,13 @@
 package com.tm.cgv.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class MemberService {
 
+	@Autowired
 	private MemberDAO memberDAO;
-	
-	public MemberService(MemberDAO memberDAO) {
-		this.memberDAO = memberDAO;
-	}
-	
 	
 	//회원가입
 	public int memberJoin(MemberDTO memberDTO) throws Exception{

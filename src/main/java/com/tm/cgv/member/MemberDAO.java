@@ -3,10 +3,12 @@ package com.tm.cgv.member;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
+
+import org.springframework.stereotype.Repository;
 
 import com.tm.util.DBConnect;
 
+@Repository
 public class MemberDAO {
 	
 	//회원가입

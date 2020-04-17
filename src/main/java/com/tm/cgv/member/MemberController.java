@@ -104,6 +104,11 @@ public class MemberController {
 		 return "redirect:../bbs/boardWrite";
 	}
 	
+	//마이페이지
+	@RequestMapping(value = "myPage")
+	public void myPage() throws Exception{
+		
+	}
 
 }
 

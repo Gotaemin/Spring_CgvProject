@@ -1,37 +1,38 @@
 package com.tm.cgv.bbs;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.tm.cgv.board.BoardDTO;
+import com.tm.cgv.board.BoardService;
+
 @Service
-public class BbsService {
+public class BbsService implements BoardService{
 
 	@Autowired
 	private BbsDAO bbsDAO;
-	
-	public BbsService(BbsDAO bbsDAO) {
-		this.bbsDAO = bbsDAO;
+
+	@Override
+	public List<BoardDTO> boardList() throws Exception {
+		return bbsDAO.boardList();
 	}
-	
-	//하나의 글 조회 
-	public BbsDTO bbsSelect(int no) throws Exception{
-		return bbsDAO.bbsSelect(no);
+
+	@Override
+	public BoardDTO boardSelect(int no) throws Exception {
+		return bbsDAO.boardSelect(no);
 	}
-	
-	//글 목록 조회
-	public ArrayList<BbsDTO> bbsListSelect() throws Exception{
-		return bbsDAO.bbsListSelect();
+
+	@Override
+	public int boardWrite(BoardDTO boardDTO) throws Exception {
+		return bbsDAO.boardWrite(boardDTO);
 	}
-	
-	//글 등록
-	public int bbsWrite(BbsDTO bbsDTO) throws Exception{
-		return bbsDAO.boardWrite(bbsDTO);
-	}
-	
-	//글 삭제
-	public int bbsDelete(int no) throws Exception{
+
+	@Override
+	public int boardDelete(int no) throws Exception {
 		return bbsDAO.boardDelete(no);
 	}
+	
+
 }
