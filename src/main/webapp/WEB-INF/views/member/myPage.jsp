@@ -51,10 +51,12 @@
 						</div>
 						<div class="box-contents">
 							<div class="person-info1">
-								<strong>성명</strong> <em>아이디</em>
+								<strong>${memberDTO.name } 님</strong> <em>(${memberDTO.id })</em>
 							</div>
 							<div class="person-info2">
-								<p>상세정보 범위</p>
+								<p>전화번호 : ${memberDTO.phone }</p>
+								<p>생년월일 : ${memberDTO.birth }</p>
+								<p>E-mail : ${memberDTO.email }</p>
 							</div>
 						</div>
 					</div>
