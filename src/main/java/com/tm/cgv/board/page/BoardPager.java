@@ -31,7 +31,7 @@ public class BoardPager {
 			this.totalPage++;
 		}
 		
-		long perBlock = 5L;
+		long perBlock = 8L;
 		
 		this.totalBlock = this.totalPage / perBlock;
 		if(this.totalPage % perBlock != 0) {

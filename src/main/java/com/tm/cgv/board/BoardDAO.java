@@ -16,8 +16,14 @@ public interface BoardDAO {
 
 	// delete
 	public int boardDelete(int no) throws Exception;
-	
-	//Count 
+
+	// ListCounter
 	public long boardCount(BoardPager pager) throws Exception;
+
+	// countUpdate
+	public int countUpdate(int no) throws Exception;
+
+	// update
+	public int boardUpdate(BoardDTO boardDTO) throws Exception;
 
 }

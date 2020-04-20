@@ -79,14 +79,14 @@
 					
 						<!----------------------------------------------------------------------------------------------------- contents detail customer_top-->
 						<div class="customer_top">
-							<h2 class="tit">글쓰기</h2>
-							<p class="stit">CGV이용과 관련된 사항에 대하여서 작성가능합니다.</p>
+							<h2 class="tit">글 수정</h2>
+							<p class="stit">CGV이용과 관련된 사항에 대하여서 수정이 가능합니다.</p>
 						</div>
 						
 						<!----------------------------------------------------------------------------------------------------- contents detail box_bbslist-->
-						<form action="./boardWrite" method="post">
+						<form action="./boardUpdate" method="post">
 							<fieldset>
-								<input type="hidden" value="${memberDTO.id}" name="id">
+								<input type="hidden" value="${bbsDTO.no}" name="no">
 								<div class="tbl_write">
 									<p class="tbl_info">
 										체크(<em><img alt="" src="../resources/images/bbsWrite/ico_redstar.png"> </em>)된 항목은 필수 입력 사항입니다.
@@ -146,9 +146,7 @@
 									
 								</div>
 								<div class="btn_s">
-									<a href="./boardList" class="round gray">
-										<span>취소</span>
-									</a>
+									<a href="./boardList" class="round gray"><span>취소</span></a>
 									<button id="btn" type="submit" class="round inred"><span>수정하기</span></button>
 								</div>
 							</fieldset>
@@ -169,7 +167,7 @@
 	<c:import url="../template/sidebar.jsp"></c:import>
 </div>
 
-<script type="text/javascript" src="../resources/js/bbsWrite.js"></script>
+<script type="text/javascript" src="../resources/js/bbsUpdate.js"></script>
 
 
 </body>

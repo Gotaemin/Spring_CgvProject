@@ -28,6 +28,8 @@ public class BbsService implements BoardService{
 
 	@Override
 	public BoardDTO boardSelect(int no) throws Exception {
+		bbsDAO.countUpdate(no);
+		
 		return bbsDAO.boardSelect(no);
 	}
 
@@ -39,6 +41,11 @@ public class BbsService implements BoardService{
 	@Override
 	public int boardDelete(int no) throws Exception {
 		return bbsDAO.boardDelete(no);
+	}
+	
+	@Override
+	public int boardUpdate(BoardDTO boardDTO) throws Exception {
+		return bbsDAO.boardUpdate(boardDTO);
 	}
 	
 

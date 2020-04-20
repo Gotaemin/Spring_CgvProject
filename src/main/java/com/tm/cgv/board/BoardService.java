@@ -16,5 +16,8 @@ public interface BoardService {
 
 	// delete
 	public int boardDelete(int no) throws Exception;
+	
+	// update
+	public int boardUpdate(BoardDTO boardDTO) throws Exception;
 
 }

@@ -17,9 +17,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from bbs where no = #{no}
 	</delete>
 	
+	<update id="countUpdate" parameterType="java.lang.Integer">
+		update bbs set count = count+1 where no = #{no}
+	</update>
+	
+	<update id="bbsUpdate" parameterType="com.tm.cgv.bbs.BbsDTO">
+		update bbs set title = #{title}, contents = #{contents} where no = #{no}
+	</update>
+	
 	<select id="bbsSelect" parameterType="java.lang.Integer" resultType="com.tm.cgv.bbs.BbsDTO">
 		select * from bbs where no = #{no}
-		
 	</select>
 	
 	<select id="bbsList" parameterType="com.tm.cgv.board.page.BoardPager" resultType="com.tm.cgv.bbs.BbsDTO">

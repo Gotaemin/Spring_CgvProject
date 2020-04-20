@@ -89,14 +89,7 @@
 									<p class="tbl_info_right">등록자 ${bbsDTO.id} 등록일 ${bbsDTO.hiredate} 조회수 ${bbsDTO.count}</p>
 								</div>
 								<div class="bbs_contents">
-									<p>내용 입력<br>내용입력합니다.
-										내용입력<br>
-										내용입력<br>
-										내용입력<br>
-										내용입력<br>
-										내용입력<br>
 										${bbsDTO.contents}
-									</p>
 								</div>
 								
 								<div class="bbs_btn">

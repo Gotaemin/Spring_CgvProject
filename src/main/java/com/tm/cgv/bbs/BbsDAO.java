@@ -48,5 +48,17 @@ public class BbsDAO implements BoardDAO{
 		return sqlSession.selectOne(NAMESPACE+"bbsCount", pager);
 	}
 	
+	//조회수 증가
+	@Override
+	public int countUpdate(int no) throws Exception {
+		return sqlSession.update(NAMESPACE+"countUpdate", no);
+	}
+	
+	//글 수정
+	@Override
+	public int boardUpdate(BoardDTO boardDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"bbsUpdate", boardDTO);
+	}
+	
 
 }

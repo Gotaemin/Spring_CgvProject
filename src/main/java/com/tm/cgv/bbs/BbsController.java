@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.tm.cgv.board.BoardDTO;
 import com.tm.cgv.board.page.BoardPager;
@@ -89,13 +90,26 @@ public class BbsController {
 	//글 수정(GET/POST)
 	@RequestMapping(value = "boardUpdate")
 	public void bbsUpdate(int no,Model model,HttpSession session) throws Exception{
-		//기존값 읽어오기
+		
+		BoardDTO boardDTO = bbsService.boardSelect(no);
+		
+		//Session이용해서 멤버정보 읽어오기
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("memberDTO");
 		model.addAttribute("memberDTO", memberDTO);
+		model.addAttribute("bbsDTO", boardDTO);
 	}
 	@RequestMapping(value = "boardUpdate",method = RequestMethod.POST)
-	public void bbsUpdate2() throws Exception{
+	public ModelAndView bbsUpdate2(BbsDTO bbsDTO,ModelAndView mv) throws Exception{
 		//DB전달
+		int result = bbsService.boardUpdate(bbsDTO);
+		
+		System.out.println("boardUpdate");
+		
+		if(result > 0) {
+			mv.setViewName("redirect:boardList");
+		}
+		
+		return mv;
 	}
 	
 	
