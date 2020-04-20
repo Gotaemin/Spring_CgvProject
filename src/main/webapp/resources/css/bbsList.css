@@ -221,6 +221,20 @@ input[type="text"]{
 	vertical-align: middle;
 }
 
+.first{
+	min-width: 27px;
+	padding: 0;
+	width: 25px;
+	background-position: 4px -104px;
+	font: 0/0 a;
+}
+
+
+.pre{
+	padding: 0 10px 0 24px;
+	background-position: 0 0;
+}
+
 .end{
 	min-width: 27px;
 	padding: 0;

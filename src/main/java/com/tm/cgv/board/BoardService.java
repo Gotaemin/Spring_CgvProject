@@ -2,9 +2,11 @@ package com.tm.cgv.board;
 
 import java.util.List;
 
+import com.tm.cgv.board.page.BoardPager;
+
 public interface BoardService {
 	// List
-	public List<BoardDTO> boardList() throws Exception;
+	public List<BoardDTO> boardList(BoardPager pager) throws Exception;
 
 	// Select One
 	public BoardDTO boardSelect(int no) throws Exception;

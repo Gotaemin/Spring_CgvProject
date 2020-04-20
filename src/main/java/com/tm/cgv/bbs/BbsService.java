@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.tm.cgv.board.BoardDTO;
 import com.tm.cgv.board.BoardService;
+import com.tm.cgv.board.page.BoardPager;
 
 @Service
 public class BbsService implements BoardService{
@@ -15,8 +16,14 @@ public class BbsService implements BoardService{
 	private BbsDAO bbsDAO;
 
 	@Override
-	public List<BoardDTO> boardList() throws Exception {
-		return bbsDAO.boardList();
+	public List<BoardDTO> boardList(BoardPager pager) throws Exception {
+		
+		pager.makeRow();
+		long totalCount = bbsDAO.boardCount(pager);
+		pager.makePage(totalCount);
+		
+		
+		return bbsDAO.boardList(pager);
 	}
 
 	@Override

@@ -86,19 +86,23 @@
 						
 						<!----------------------------------------------------------------------------------------------------- contents detail search_area-->
 						<div class="search_area">
-							<select style="width: 100px;">
-								<option selected="selected">제목</option>
-								<option>내용</option>
-							</select>
-							<input type="text" placeholder="검색어를 입력해 주세요" style="width: 185px;">
-							<button type="button" class="round inblack"><span>검색하기</span></button>
+							<form action="./boardList">
+								<select style="width: 100px;" name="kind">
+									<option selected="selected" value="sTitle">제목</option>
+									<option value="sContents">내용</option>
+								</select>
+								
+									<input type="text" name="search" placeholder="검색어를 입력해 주세요" style="width: 185px;">
+									<button type="button" class="round inblack"><span>검색하기</span></button>
+								
+							</form>	
 						</div>
 					
 						<!----------------------------------------------------------------------------------------------------- contents detail tab-->
 						<div class="wrap_tab">
 							<ul class="tab_menu_round">
 								<li>
-									<a class="lo" href="">전체</a>
+									<a class="lo" href="./boardList">전체</a>
 								</li>
 							</ul>
 							
@@ -115,16 +119,16 @@
 							<table class="tbl_list">
 								<colgroup>
 									<col style="width: 50px;">
-									<col style="width: 80px;">
 									<col style="width: 570px;">
+									<col style="width: 80px;">
 									<col style="width: 75px;">
 									<col style="width: 60px;">
 								</colgroup>
 								<thead>
 									<tr>
 										<th scope="col">번호</th>
-										<th scope="col">구분</th>
 										<th scope="col" class="tit">제목</th>
+										<th scope="col">등록자</th>
 										<th scope="col">등록일</th>
 										<th scope="col">조회수</th>
 									</tr>
@@ -133,10 +137,10 @@
 									<c:forEach var="list" items="${bbsList}" >
 										<tr class="first">
 											<td>${list.no}</td>
-											<td>[극장]</td>
 											<td class="txt">
 												<a href="./boardSelect?no=${list.no}">${list.title }</a>
 											</td>
+											<td>${list.id}</td>
 											<td>${list.hiredate }</td>
 											<td class="num">${list.count}</td>
 										</tr>
@@ -148,20 +152,26 @@
 						
 						<!----------------------------------------------------------------------------------------------------- contents detail paging-->
 						<div class="paging">
+							
+							<c:if test="${pager.curBlock gt 1}">
+								<button type="button" class="btn_page first"></button>
+								<button id="btn-pre" type="button" class="btn_page pre">이전</button>
+							</c:if>
+						
 							<ul>
-								<li class="on"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">6</a></li>
-								<li><a href="#">7</a></li>
-								<li><a href="#">8</a></li>
-								<li><a href="#">9</a></li>
-								<li><a href="#">10</a></li>
+<!-- 							<li class="on"><a href="#">1</a></li> -->
+								<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
+				
+									<li><a href="./boardList?curPage=${i}&kind=${pager.kind}&search=${pager.search}">${i}</a></li>
+				
+								</c:forEach>
+				
 							</ul>
-							<button type="button" class="btn_page next">다음</button>
-							<button type="button" class="btn_page end">끝</button>
+							<c:if test="${pager.curBlock lt pager.totalBlock}">
+								<button id="btn-next" type="button" class="btn_page next">다음</button>
+								<button type="button" class="btn_page end">끝</button>
+							</c:if>
+							
 							<a href="../member/loginCheck"><button id="btn-submit" type="button" class="round inred">글쓰기</button></a>
 							
 						</div>
@@ -180,7 +190,17 @@
 	<c:import url="../template/sidebar.jsp"></c:import>
 </div>
 
+<script type="text/javascript">
 
+	$("#btn-next").click(function() {
+		location.href='./boardList?curPage=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}';
+	});
+	
+	$("#btn-pre").click(function() {
+		location.href='./boardList?curPage=${pager.startNum-1}&kind=${pager.kind}&search=${pager.search}';
+	});
+
+</script>
 
 
 
