@@ -37,7 +37,7 @@
 				</h2>
 				<div class="menu">
 					<ul>
-						<li class="menu_movie"><a href="http://www.cgv.co.kr/movies/">영화</a></li>
+						<li class="menu_movie"><a href="${pageContext.request.contextPath}/movie/movieList">영화</a></li>
 						<li class="menu_reserve"><a href="http://www.cgv.co.kr/ticket/">예매</a></li>
 						<li class="menu_theater"><a href="http://www.cgv.co.kr/theaters/">극장</a></li>
 						<li class="menu_event"><a href="http://www.cgv.co.kr/culture-event/event/#1">이벤트&컬처</a></li>
