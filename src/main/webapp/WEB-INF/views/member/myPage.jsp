@@ -45,8 +45,8 @@
 				<div class="mycgv-info-wrap">
 					<div class="sect-person-info">
 						<div class="box-image">
-							<span class="thumb-image"> <img alt="" src=""> <span
-								class="profile-mask"></span>
+							<span class="thumb-image"> 
+							<img alt="" src="../resources/images/myPage/default_profile.gif"> <span class="profile-mask"></span>
 							</span>
 						</div>
 						<div class="box-contents">
@@ -61,7 +61,7 @@
 						</div>
 					</div>
 					
-<!-- 					여기까지함 -->
+
 					<div class="sect-movie-info">
 						<div class="col-my-coupon">
 							<h3>MY COUPON</h3>
@@ -85,8 +85,24 @@
 						</div>
 						<div class="col-favorite-theater">
 							<div class="sect-favorite">
-								<ul></ul>
-								<button class="setting"></button>
+								<ul>
+									<li>
+										<a href=""><span>1</span>CGV불광</a>
+									</li>
+									<li>
+										<a href=""><span>2</span>CGV상봉</a>
+									</li>
+									<li>
+										<a href=""><span>3</span>CGV홍대</a>
+									</li>
+									<li>
+										<a href=""><span>4</span></a>
+									</li>
+									<li>
+										<a href=""><span>5</span></a>
+									</li>
+								</ul>
+<!-- 								<button class="setting"></button> -->
 							</div>
 						</div>
 					</div>
@@ -99,12 +115,9 @@
 							<div class="snb">
 								<ul>
 									<li class="on"><a href="">MY CGV HOME<i></i></a></li>
-									<li><a href="">나의 예매내역<i></i></a></li>
-									<li><a href="">할인쿠폰 관리<i></i></a></li>
-									<li><a href="">영화관람권 관리<i></i></a></li>
-									<li><a href="">분실문 문의<i></i></a></li>
-									<li><a href="">단체/대관 문의<i></i></a></li>
-									<li><a href="">대학로 옥탑 예약<i></i></a></li>
+									<li><a href="">회원정보 수정<i></i></a></li>
+									<li><a href="">회원 탈퇴<i></i></a></li>
+									<li><a href="">예매 영화 관리<i></i></a></li>
 								</ul>
 
 							</div>
