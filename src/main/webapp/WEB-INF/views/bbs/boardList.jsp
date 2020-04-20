@@ -154,7 +154,7 @@
 						<div class="paging">
 							
 							<c:if test="${pager.curBlock gt 1}">
-								<button type="button" class="btn_page first"></button>
+								<button id="btn-first" type="button" class="btn_page first"></button>
 								<button id="btn-pre" type="button" class="btn_page pre">이전</button>
 							</c:if>
 						
@@ -169,7 +169,7 @@
 							</ul>
 							<c:if test="${pager.curBlock lt pager.totalBlock}">
 								<button id="btn-next" type="button" class="btn_page next">다음</button>
-								<button type="button" class="btn_page end">끝</button>
+								<button id="btn-end" type="button" class="btn_page end">끝</button>
 							</c:if>
 							
 							<a href="../member/loginCheck"><button id="btn-submit" type="button" class="round inred">글쓰기</button></a>
@@ -198,6 +198,14 @@
 	
 	$("#btn-pre").click(function() {
 		location.href='./boardList?curPage=${pager.startNum-1}&kind=${pager.kind}&search=${pager.search}';
+	});
+	
+	$("#btn-first").click(function() {
+		location.href='./boardList?curPage=1&kind=${pager.kind}&search=${pager.search}';
+	});
+	
+	$("#btn-end").click(function() {
+		location.href='./boardList?curPage=${pager.totalPage}&kind=${pager.kind}&search=${pager.search}';
 	});
 
 </script>
