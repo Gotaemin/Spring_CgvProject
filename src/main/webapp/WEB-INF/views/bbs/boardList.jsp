@@ -51,7 +51,7 @@
 							<ul>
 								<li><a href="">고객센터 메인<i></i></a></li>
 								<li><a href="">자주찾는 질문<i></i></a></li>
-								<li class="on"><a href="/bbs/boardList">공지/뉴스<i></i></a></li>
+								<li class="on"><a href="./boardList">공지/뉴스<i></i></a></li>
 								<li><a href="">이메일 문의<i></i></a></li>
 								<li><a href="">분실문 문의<i></i></a></li>
 								<li><a href="">단체/대관 문의<i></i></a></li>
@@ -110,7 +110,8 @@
 						
 						<!----------------------------------------------------------------------------------------------------- contents detail search_result-->
 						<div class="search_result">
-							총<span class="num">${fn:length(bbsList)}</span>건이 검색되었습니다.
+<%-- 							총<span class="num">${fn:length(bbsList)}</span>건이 검색되었습니다. --%>
+							총<span class="num">${pager.totalCount}</span>건이 검색되었습니다.
 						</div>
 						
 						

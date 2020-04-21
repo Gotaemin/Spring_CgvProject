@@ -26,6 +26,7 @@ public class Pager {
 	}
 	
 	public void makePage(long totalCount) {
+		this.totalCount = totalCount;
 		this.totalPage = totalCount / this.perPage;
 		if(totalCount % this.perPage != 0) {
 			this.totalPage++;

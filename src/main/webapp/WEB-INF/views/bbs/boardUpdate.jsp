@@ -8,7 +8,6 @@
 <link href="../resources/css/bbsLayout.css" rel="stylesheet" type="text/css">
 <link href="../resources/css/layout.css" rel="stylesheet" type="text/css">
 
-<link href="../resources/css/bbsUpdate.css" rel="stylesheet" type="text/css">
 <link href="../resources/css/bbsWrite.css" rel="stylesheet" type="text/css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -167,7 +166,8 @@
 	<c:import url="../template/sidebar.jsp"></c:import>
 </div>
 
-<script type="text/javascript" src="../resources/js/bbsUpdate.js"></script>
+<script type="text/javascript" src="../resources/js/bbsWrite.js"></script>
+<!-- <script type="text/javascript" src="../resources/js/bbsUpdate.js"></script> -->
 
 
 </body>

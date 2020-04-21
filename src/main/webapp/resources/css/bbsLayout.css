@@ -58,6 +58,9 @@ tbody{
 
 /*  ------------------------------------------------------------------------------- container */
 
+.container{
+	background-color: #fdfcf0;
+}
 
 .round{
 	line-height: 23px;

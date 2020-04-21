@@ -70,42 +70,94 @@
 				<div class="sect-movie-chart">
 					<!-- 첫번째 행 -->
 					<ol>
-						<li>
-							<!-- 윗 부분 -->
-							<div class="box-image">
-								<strong class="rank">No.1</strong>
-								<a href="">
-									<span class="thumb-image">
-										<img alt="" src="../resources/images/movie/movieList/79273_320.jpg">
-										<span class="icon-grade grade-12">청소년 관람불가</span>
-									</span>
-								</a>
-								<span class="screentype"></span>
-							</div>
-							
-							<!-- 아래 부분 -->
-							<div class="box-contents">
-								<a href=""><strong class="title">제목</strong> </a>
-								<div class="score">
-									<strong class="percent">예매율<span>9.0%</span> </strong>
-									<div class="egg-gage small">
-										<span class="egg great"></span>
-										<span class="percent">75%</span>
-									</div>
+						<c:forEach begin="1" end="3" var="i">
+							<li>
+								<!-- 윗 부분 -->
+								<div class="box-image">
+									<strong class="rank">No.${i}</strong>
+									<a href="">
+										<span class="thumb-image">
+											<img alt="" src="../resources/images/movie/movieList/79273_320.jpg">
+											<span class="icon-grade grade-12">청소년 관람불가</span>
+										</span>
+									</a>
+									<span class="screentype"></span>
 								</div>
-								<span class="text-info">
-									<strong>2020.04.15<span>개봉</span></strong>
-								</span>
-								<span class="like">
-									<a href="" class="link-reservation">예매</a>
-								</span>
-							</div>						
-						</li>
+								
+								<!-- 아래 부분 -->
+								<div class="box-contents">
+									<a href=""><strong class="title">제목</strong> </a>
+									<div class="score">
+										<strong class="percent">예매율<span>9.0%</span> </strong>
+										<div class="egg-gage small">
+											<span class="egg great"></span>
+											<span class="percent">75%</span>
+										</div>
+									</div>
+									<span class="text-info">
+										<strong>2020.04.15<span>개봉</span></strong>
+									</span>
+									<span class="like">
+										<a href="" class="link-reservation">예매</a>
+									</span>
+								</div>						
+							</li>
+						</c:forEach>
 					</ol>
 					
 					<!-- 두번째행 -->
-<!-- 					<ol> -->
-<!-- 					</ol> -->
+					<ol>
+						<c:forEach var="i" begin="4" end="7">
+							<li>
+								<!-- 윗 부분 -->
+								<div class="box-image">
+									<strong class="rank">No.${i}</strong>
+									<a href="">
+										<span class="thumb-image">
+											<img alt="" src="../resources/images/movie/movieList/79273_320.jpg">
+											<span class="icon-grade grade-12">청소년 관람불가</span>
+										</span>
+									</a>
+									<span class="screentype"></span>
+								</div>
+								
+								<!-- 아래 부분 -->
+								<div class="box-contents">
+									<a href=""><strong class="title">제목</strong> </a>
+									<div class="score">
+										<strong class="percent">예매율<span>9.0%</span> </strong>
+										<div class="egg-gage small">
+											<span class="egg great"></span>
+											<span class="percent">75%</span>
+										</div>
+									</div>
+									<span class="text-info">
+										<strong>2020.04.15<span>개봉</span></strong>
+									</span>
+									<span class="like">
+										<a href="" class="link-reservation">예매</a>
+									</span>
+								</div>						
+							</li>
+						</c:forEach>
+					</ol>
+					
+					<div class="chart-ad">
+						<div class="box-com">
+							<a href=""><img alt="adImage" src="../resources/images/movie/movieList/200313_160x300.jpg"></a>
+						</div>
+						<div class="chart-ad-desc">
+							<dl>
+								<dt>
+									<img alt="ad1" src="../resources/images/movie/movieList/ico_ad1.png">
+									<span>CGV 기프트 카드</span>
+								</dt>
+								<dd>
+									<span>센스있는 선물의 정석</span>
+								</dd>
+							</dl>
+						</div>
+					</div>
 				</div>
 			
 			</div>

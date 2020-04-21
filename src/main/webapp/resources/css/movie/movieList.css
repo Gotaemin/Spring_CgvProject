@@ -10,6 +10,10 @@ p{
 	width: 500px;
 }
 
+ol,ul{
+	list-style: none;
+}
+
 strong{
 	font-weight: 500;
 }
@@ -17,7 +21,7 @@ strong{
 body{
 	line-height: 1.2;
 	color :#666;
-	font-weight: 300px;
+	font-weight: 300;
 	font-size: 13px;
 }
 
@@ -48,8 +52,7 @@ button{
 
 .container{
 	width: 100%;
-	height: 950px;
-	
+	background-color: #fdfcf0;
 }
 
 .c_nav{
@@ -172,6 +175,7 @@ button{
 
 .sect-sorting > select{
 	padding: 3px 5px;
+	vertical-align: bottom;
 }
 
 .sect-sorting > select option{
@@ -198,7 +202,6 @@ button{
 	padding: 0 5px 0;
 	display: inline-block;
 	position: relative;
-		
 }
 
 
@@ -212,10 +215,14 @@ button{
 	margin-top: 30px;
 }
 
+
 .sect-movie-chart > ol {
 	margin-left: -64px;
+	margin-bottom:30px;
 	border-bottom: 3px solid #241d12;
 	padding-top: 0; 
+	height: 455px;
+	
 }
 
 .sect-movie-chart > ol > li {
@@ -380,15 +387,89 @@ button{
 }
 
 .link-reservation{
+	float:right;
 	width: 57px;
 	height: 25px;
-	background-position: -96px 0;
 	display: inline-block;
-	background: url("../../images/movie/movieList/sprite_btn.png") 0 0 no-repeat;
+	background: url("../../images/movie/movieList/sprite_btn.png") -96px 0px no-repeat;
 	font: 0/0 a;
 	vertical-align: top;
 	zoom:1;
 }
+
+
+
+
+.chart-ad{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 189px;
+	height: 414px;
+	padding: 2px;
+	border: 3px solid #070707;
+	background: #212120;
+}
+
+.box-com{
+	padding: 13px 14px 12px;
+	border: 1px solid #070707;
+	background: #222221;
+}
+
+.chart-ad-desc{
+	width: 160px;
+	margin: 0 auto;
+	padding: 16px 0 0 0;
+}
+
+.chart-ad-desc dt{
+	margin-bottom: 7px;
+	font-size: 0;
+}
+
+.chart-ad-desc img{
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+}
+
+.chart-ad-desc span{
+	color: #fdfcf0;
+}
+
+.chart-ad-desc dt span{
+	font-weight: bold;
+	font-size: 15px;
+	letter-spacing: -1px;
+	padding-left: 5px;
+}
+
+.chart-ad-desc dd{
+	border-top: 3px solid #fdfcf0;
+	border-bottom: 3px solid #fdfcf0;
+	letter-spacing: -1px;
+}
+
+.chart-ad-desc dd span{
+	font-size: 14px;
+	line-height: 28px;
+	height: 28px;
+	letter-spacing: -1px;
+}
+
+dl:after, ul:after, li:after{
+	content: '';
+	clear: both;
+	display: block;
+}
+
+
+
+
+
+
+
 
 
 
