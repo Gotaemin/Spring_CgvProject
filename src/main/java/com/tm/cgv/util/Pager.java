@@ -1,6 +1,6 @@
-package com.tm.cgv.board.page;
+package com.tm.cgv.util;
 
-public class BoardPager {
+public class Pager {
 	
 	private long startRow;
 	private long lastRow;

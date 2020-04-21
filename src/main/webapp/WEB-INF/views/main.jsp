@@ -19,63 +19,8 @@ span{
 
 <div class="root">
 	<!-- 헤더 -------------------------------------------------------------------------------------->
-	<div class="header">
-		<div class="head">
-			
-			
-			<h1 class="animated swing"><a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/images/header/h1_cgv.png" alt="cgvLogo"></a></h1>
-			<div class="header_service">
-					
-				<c:if test="${not empty memberDTO}">
-					<ul class="gnb">
-						<li>
-							<a class="logout" href="${pageContext.request.contextPath}/member/logout" style="width: 43px; background-position: -521px 9px;">
-							<span>로그아웃</span></a>
-						</li>
-						<li><a class="mycgv" href="${pageContext.request.contextPath}/member/myPage"><span>MyCGV</span></a></li>
-						<li><a class="vip_lounge" href="#"><span>VIPLOUNGE</span></a></li>
-						<li><a class="club_service" href="#"><span>Club서비스</span></a></li>
-						<li><a class="customer" href="${pageContext.request.contextPath}/bbs/boardList"><span>고객센터</span></a></li>
-						<li><a class="english_ticketing" href="#"><span>ENGLISHTICKETING</span></a></li>
-					</ul>
-				</c:if>
-				<c:if test="${empty memberDTO}">
-					<ul class="gnb">
-						<li><a class="login" href="${pageContext.request.contextPath}/member/login"><span>로그인</span></a></li>
-						<li><a class="join" href="${pageContext.request.contextPath}/member/terms"><span>회원가입</span></a></li>
-						<li><a class="mycgv" href="${pageContext.request.contextPath}/member/loginCheck"><span>MyCGV</span></a></li>
-						<li><a class="vip_lounge" href="#"><span>VIPLOUNGE</span></a></li>
-						<li><a class="club_service" href="#"><span>Club서비스</span></a></li>
-						<li><a class="customer" href="${pageContext.request.contextPath}/bbs/boardList"><span>고객센터</span></a></li>
-					<li><a class="english_ticketing" href="#"><span>ENGLISHTICKETING</span></a></li>
-				</ul>
-				</c:if>			
-				
-			</div>
-			<div class="header_menu">
-				<h2>
-					<img src="${pageContext.request.contextPath}/resources/images/header/h2_cultureplex.png" alt="cultureplex">
-				</h2>
-				<div class="menu">
-					<ul>
-						<li class="menu_movie"><a href="${pageContext.request.contextPath}/movie/movieList">영화</a></li>
-						<li class="menu_reserve"><a href="">예매</a></li>
-						<li class="menu_theater"><a href="">극장</a></li>
-						<li class="menu_event"><a href="">이벤트&컬처</a></li>
-					</ul>
-				</div>
-				<div class="search">
-					<fieldset>
-						<input type="text" placeholder="주디 3월25일 개봉">
-						<button class="btn-go-search">검색</button>
-					</fieldset>
-				</div>
-				<div class="phototicket">
-					<a href="#">포토티켓</a>
-				</div>
-			</div>
-		</div>
-	</div>	
+	
+	<c:import url="template/header.jsp"></c:import>
 	
 	<!-- 컨테이너 -------------------------------------------------------------------------------------->
 	<div class="container container_bg">
@@ -184,104 +129,12 @@ span{
 	
 	
 	<!-- 푸터 -------------------------------------------------------------------------------------->
-	<div class="footer">
-		<div class="footer_wrap">
-			<div class="footer_contents">
-				<a href="#">
-					<img alt="" src="${pageContext.request.contextPath}/resources/images/footer/980x240.png">
-				</a>
-			</div>
-		</div>
-		<div class="foot">
-			<div class="smuse">
-				<ul>
-					<li><a href="#" class="dx"></a></li>
-					<li><a href="#" class="imax">IMAX</a></li>
-					<li><a href="#" class="screenx">SCREENX</a></li>
-					<li><a href="#" class="spherex">SPHEREX</a></li>
-					<li><a href="#" class="cinema">CINEMA</a></li>
-					<li><a href="#" class="goldclass">GOLDCLASS</a></li>
-					<li><a href="#" class="chef">CINE DE CHEF</a></li>
-					<li><a href="#" class="primite">PRIMITE CINEA</a></li>
-					<li><a href="#" class="kids">CINE KIDS</a></li>
-					<li><a href="#" class="foret">CINE_FORET</a></li>
-				</ul>
-			</div>
-			<div class="cjinfo">
-				<p class="footer_logo">CGV 로고</p>
-				
-				<div class="policy">
-					<ul>
-						<li><a href="#">회사소개</a></li>
-						<li><a href="#">IR</a></li>
-						<li><a href="#">채용정보</a></li>
-						<li><a href="#">광고/프로모션문의</a></li>
-						<li><a href="#">제휴문의</a></li>
-						<li><a href="#">출점문의</a></li>
-						<li><a href="#">이용약관</a></li>
-						<li><a href="#">편성기준</a></li>
-						<li><a style="color:#e7612e;" href="#">개인정보처리방침</a></li>
-						<li><a href="#">법적고지</a></li>
-						<li><a href="#">이메일주소무단수집거부</a></li>
-						<li><a href="#">상생경영</a></li>
-						<li><a href="#">사이트맵</a></li>
-					</ul>
-				</div>
-				<div class="share"></div>
-			
-				<div class="address">
-					<address>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)</address>
-					<p class="vl">
-						<span>대표이사 : 최병환</span>
-						<span>사업자등록번호 : 104-81-45690</span>
-						<span>통신판매업신고번호 : 2017-서울용산-0662</span>
-						<img src="${pageContext.request.contextPath}/resources/images/footer/btn_reg.png">
-					</p>
-					<p class="vl">
-						<span>호스팅사업자 : CJ올리브네트웍스</span>
-						<span>개인정보보호 책임자 : 정종민</span>
-						<span>대표이메일 : cjcgvmaster@cj.net</span>
-						<span>CGV고객센터 : 1544-1122</span>
-					</p>
-					<p class="copyright">
-						© CJ CGV. All Rights Reserved
-					</p>
-				</div>
-				<div class="familysite">
-					<select>
-						<option>계열사 바로가기</option>
-						<option>CJ그룹</option>
-						<option>엔터테이먼트&미디어</option>
-						<option>식품&식품서비스</option>
-						<option>생명공학</option>
-						<option>신유통</option>
-						<option>인프라</option>
-					</select>
-					<button type="button">GO</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	<c:import url="template/footer.jsp"></c:import>
 	
 	
 	
 	<!-- 사이드바 ---------------------------------------------------------------------------------------------->
-	<div class="sidebar">
-		<div class="aside-content-top">
-			<div class="aside-content-btm">
-				<a></a>
-				<a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/images/asidebar/btn_person_theater.gif"> </a>
-				<a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/images/asidebar/btn_person_arthouse.gif"> </a>
-				<a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/images/asidebar/btn_person_special.gif"> </a>
-				<a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/images/asidebar/btn_person_phototicket.gif"> </a>
-				<a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/images/asidebar/btn_person_ticket.gif"> </a>
-				<a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/images/asidebar/btn_person_discount.gif"> </a>
-			</div>
-		</div>
-		<div class="aside-btn-top">
-			<a href="#" onclick="window.scrollTo(0,0);return false;"></a>
-		</div>
-	</div>
+	<c:import url="template/sidebar.jsp"></c:import>
 </div>
 
 </body>

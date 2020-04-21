@@ -1,5 +1,7 @@
 package com.tm.cgv.member;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.tm.cgv.Info.InfoDTO;
 
@@ -68,13 +69,17 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "login", method = RequestMethod.POST)
-	public String memberLogin2(String id, String pwd, HttpSession session) throws Exception {
-		// System.out.println("memberLoginDB");
-
+	public String memberLogin2(InfoDTO infoDTO,String remember, HttpSession session,HttpServletResponse response,Model model) throws Exception {
 		
-		InfoDTO infoDTO = new InfoDTO();
-		infoDTO.setId(id);
-		infoDTO.setPwd(pwd);
+		//쿠키 생성 및 전달
+		Cookie cookie = new Cookie("cookieId", "");
+		
+		if(remember != null) {
+			cookie.setValue(infoDTO.getId());
+		}
+		response.addCookie(cookie);
+		
+		
 		
 		infoDTO = memberService.infoLogin(infoDTO);
 
@@ -82,6 +87,10 @@ public class MemberController {
 		if (infoDTO != null) {
 			session.setAttribute("memberDTO", infoDTO);
 			command = "redirect:/";
+		}else {
+			model.addAttribute("msg", "로그인 실패");
+			model.addAttribute("path", "login");
+			command = "common/result";
 		}
 		return command;
 	}

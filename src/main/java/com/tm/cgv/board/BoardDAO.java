@@ -2,11 +2,11 @@ package com.tm.cgv.board;
 
 import java.util.List;
 
-import com.tm.cgv.board.page.BoardPager;
+import com.tm.cgv.util.Pager;
 
 public interface BoardDAO {
 	// List
-	public List<BoardDTO> boardList(BoardPager pager) throws Exception;
+	public List<BoardDTO> boardList(Pager pager) throws Exception;
 
 	// Select One
 	public BoardDTO boardSelect(int no) throws Exception;
@@ -18,7 +18,7 @@ public interface BoardDAO {
 	public int boardDelete(int no) throws Exception;
 
 	// ListCounter
-	public long boardCount(BoardPager pager) throws Exception;
+	public long boardCount(Pager pager) throws Exception;
 
 	// countUpdate
 	public int countUpdate(int no) throws Exception;

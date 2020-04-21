@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tm.cgv.board.BoardDTO;
-import com.tm.cgv.board.page.BoardPager;
 import com.tm.cgv.member.MemberDTO;
+import com.tm.cgv.util.Pager;
 
 @Controller
 @RequestMapping(value = "/bbs/**")
@@ -24,7 +24,7 @@ public class BbsController {
 	
 	//글 목록 리스트 (GET)
 	@RequestMapping(value = "boardList",method = RequestMethod.GET)
-	public void bbsList(BoardPager pager, Model model) throws Exception{
+	public void bbsList(Pager pager, Model model) throws Exception{
 
 		List<BoardDTO> bbsList = bbsService.boardList(pager);
 		

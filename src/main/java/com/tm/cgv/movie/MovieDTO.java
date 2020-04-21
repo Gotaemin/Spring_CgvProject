@@ -13,8 +13,15 @@ public class MovieDTO {
 	private String ageLimit;
 	private String runningTime;
 	private String contents;
+	private long visitor;
 	
 	
+	public long getVisitor() {
+		return visitor;
+	}
+	public void setVisitor(long visitor) {
+		this.visitor = visitor;
+	}
 	public String getImageName() {
 		return imageName;
 	}

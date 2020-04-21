@@ -23,7 +23,7 @@
 					<ul class="gnb">
 						<li><a class="login" href="${pageContext.request.contextPath}/member/login"><span>로그인</span></a></li>
 						<li><a class="join" href="${pageContext.request.contextPath}/member/terms"><span>회원가입</span></a></li>
-						<li><a class="mycgv" href="#"><span>MyCGV</span></a></li>
+						<li><a class="mycgv" href="${pageContext.request.contextPath}/member/loginCheck"><span>MyCGV</span></a></li>
 						<li><a class="vip_lounge" href="#"><span>VIPLOUNGE</span></a></li>
 						<li><a class="club_service" href="#"><span>Club서비스</span></a></li>
 						<li><a class="customer" href="${pageContext.request.contextPath}/bbs/boardList"><span>고객센터</span></a></li>
@@ -38,9 +38,9 @@
 				<div class="menu">
 					<ul>
 						<li class="menu_movie"><a href="${pageContext.request.contextPath}/movie/movieList">영화</a></li>
-						<li class="menu_reserve"><a href="http://www.cgv.co.kr/ticket/">예매</a></li>
-						<li class="menu_theater"><a href="http://www.cgv.co.kr/theaters/">극장</a></li>
-						<li class="menu_event"><a href="http://www.cgv.co.kr/culture-event/event/#1">이벤트&컬처</a></li>
+						<li class="menu_reserve"><a href="">예매</a></li>
+						<li class="menu_theater"><a href="">극장</a></li>
+						<li class="menu_event"><a href="">이벤트&컬처</a></li>
 					</ul>
 				</div>
 				<div class="search">

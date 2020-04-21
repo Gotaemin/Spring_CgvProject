@@ -7,11 +7,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   
 <mapper namespace="com.tm.cgv.member.MemberDAO">
 
-	<insert id="infoJoin" parameterType="com.tm.cgv.member.MemberDTO">
+	<insert id="infoJoin" parameterType="MemberDTO">
 		insert into member values(#{id},#{pwd},#{name},#{birth},#{phone},#{email})
 	</insert>
 	
-	<select id="infoLogin" parameterType="com.tm.cgv.member.MemberDTO" resultType="com.tm.cgv.member.MemberDTO">
+	<select id="infoLogin" parameterType="MemberDTO" resultType="MemberDTO">
 		select * from member where id=#{id} and pwd=#{pwd}
 	</select>
 

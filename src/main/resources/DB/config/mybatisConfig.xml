@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<typeAliases>
+		<typeAlias type="java.lang.Integer" alias="Integer"/>
+		<typeAlias type="java.lang.Long" alias="Long"/>
+		
+		<typeAlias type="com.tm.cgv.util.Pager" alias="Pager"/>
+		
+		<typeAlias type="com.tm.cgv.bbs.BbsDTO" alias="BbsDTO"/>
+		<typeAlias type="com.tm.cgv.member.MemberDTO" alias="MemberDTO"/>
+	
+	</typeAliases>
+</configuration>

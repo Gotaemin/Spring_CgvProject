@@ -74,20 +74,22 @@
 							<!-- 윗 부분 -->
 							<div class="box-image">
 								<strong class="rank">No.1</strong>
-								<a href=""><span class="thumb-image">
-									<img alt="" src="">
-									<span class="icon-grade grade-19">청소년 관람불가</span>
-								</span></a>
+								<a href="">
+									<span class="thumb-image">
+										<img alt="" src="../resources/images/movie/movieList/79273_320.jpg">
+										<span class="icon-grade grade-12">청소년 관람불가</span>
+									</span>
+								</a>
 								<span class="screentype"></span>
 							</div>
 							
 							<!-- 아래 부분 -->
 							<div class="box-contents">
-								<a href=""><strong>제목</strong> </a>
+								<a href=""><strong class="title">제목</strong> </a>
 								<div class="score">
 									<strong class="percent">예매율<span>9.0%</span> </strong>
 									<div class="egg-gage small">
-										<span class="egg good"></span>
+										<span class="egg great"></span>
 										<span class="percent">75%</span>
 									</div>
 								</div>
@@ -102,8 +104,8 @@
 					</ol>
 					
 					<!-- 두번째행 -->
-					<ol>
-					</ol>
+<!-- 					<ol> -->
+<!-- 					</ol> -->
 				</div>
 			
 			</div>
