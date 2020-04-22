@@ -12,7 +12,7 @@
 							<a class="logout" href="${pageContext.request.contextPath}/member/logout" style="width: 43px; background-position: -521px 9px;">
 							<span>로그아웃</span></a>
 						</li>
-						<li><a class="mycgv" href="#"><span>MyCGV</span></a></li>
+						<li><a class="mycgv" href="${pageContext.request.contextPath}/member/myPage"><span>MyCGV</span></a></li>
 						<li><a class="vip_lounge" href="#"><span>VIPLOUNGE</span></a></li>
 						<li><a class="club_service" href="#"><span>Club서비스</span></a></li>
 						<li><a class="customer" href="${pageContext.request.contextPath}/bbs/boardList"><span>고객센터</span></a></li>
