@@ -15,6 +15,11 @@ public class MemberDAO implements InfoDAO{
 	private final String NAMESPACE = "com.tm.cgv.member.MemberDAO.";
 	
 	
+	public MemberDTO userIdCheck(String id) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"userIdCheck", id);
+	}
+	
+	
 	@Override
 	public int infoJoin(InfoDTO infoDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"infoJoin", infoDTO);

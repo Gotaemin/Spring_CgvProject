@@ -11,6 +11,17 @@ public class MemberService implements InfoService{
 
 	@Autowired
 	private MemberDAO memberDAO;
+	
+	
+	public int userIdCheck(String id) throws Exception{
+		MemberDTO memberDTO = memberDAO.userIdCheck(id);
+		int result = 1;
+		if(memberDTO != null) {
+			result = 0;
+		}
+		
+		return result;
+	}
 
 	@Override
 	public int infoJoin(InfoDTO infoDTO) throws Exception {

@@ -8,6 +8,7 @@
 	<typeAliases>
 		<typeAlias type="java.lang.Integer" alias="Integer"/>
 		<typeAlias type="java.lang.Long" alias="Long"/>
+		<typeAlias type="java.lang.String" alias="String"/>
 		
 		<typeAlias type="com.tm.cgv.util.Pager" alias="Pager"/>
 		
