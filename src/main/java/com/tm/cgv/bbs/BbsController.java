@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tm.cgv.board.BoardDTO;
@@ -25,9 +26,7 @@ public class BbsController {
 	//글 목록 리스트 (GET)
 	@RequestMapping(value = "boardList",method = RequestMethod.GET)
 	public void bbsList(Pager pager, Model model) throws Exception{
-
 		List<BoardDTO> bbsList = bbsService.boardList(pager);
-		
 		
 		if(bbsList != null) {
 			model.addAttribute("bbsList", bbsList);
@@ -39,19 +38,14 @@ public class BbsController {
 	@RequestMapping(value = "boardWrite",method = RequestMethod.GET)
 	public void bbsWrite1(HttpSession session) {
 		//System.out.println("bbs Write Form");
-		MemberDTO memberDTO = (MemberDTO)session.getAttribute("memberDTO");
-		String id = memberDTO.getId();
 	}
+	
 	@RequestMapping(value = "boardWrite",method = RequestMethod.POST)
-	public String bbsWrite2(String id,String title,String contents) throws Exception{
-		System.out.println("bbs Write Form");
+	public String bbsWrite2(BbsDTO bbsDTO,MultipartFile file,HttpSession session) throws Exception{
+//		System.out.println("bbs Write Form");
 		
-		BbsDTO bbsDTO = new BbsDTO();
-		bbsDTO.setId(id);
-		bbsDTO.setTitle(title);
-		bbsDTO.setContents(contents);
-		
-		int result = bbsService.boardWrite(bbsDTO);
+		System.out.println("c:"+file);
+		int result = bbsService.boardWrite(bbsDTO,file,session);
 		
 		if(result > 0) {
 			return "redirect:boardList";

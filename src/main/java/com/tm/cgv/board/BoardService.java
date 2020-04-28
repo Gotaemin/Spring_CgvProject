@@ -2,6 +2,10 @@ package com.tm.cgv.board;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.web.multipart.MultipartFile;
+
 import com.tm.cgv.util.Pager;
 
 public interface BoardService {
@@ -12,7 +16,7 @@ public interface BoardService {
 	public BoardDTO boardSelect(int no) throws Exception;
 
 	// Write(Insert)
-	public int boardWrite(BoardDTO boardDTO) throws Exception;
+	public int boardWrite(BoardDTO boardDTO,MultipartFile file,HttpSession session) throws Exception;
 
 	// delete
 	public int boardDelete(int no) throws Exception;

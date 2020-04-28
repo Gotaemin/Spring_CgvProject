@@ -83,7 +83,7 @@
 						</div>
 						
 						<!----------------------------------------------------------------------------------------------------- contents detail box_bbslist-->
-						<form action="./boardWrite" method="post">
+						<form action="./boardWrite" method="post" enctype="multipart/form-data">
 							<fieldset>
 								<input type="hidden" value="${memberDTO.id}" name="id">
 								<div class="tbl_write">
@@ -136,7 +136,7 @@
 													<label>첨부파일</label>
 												</th>
 												<td colspan="3">
-													<input type="file" size="51" >
+													<input type="file" size="51" name="file">
 												</td>
 											</tr>
 										</tbody>

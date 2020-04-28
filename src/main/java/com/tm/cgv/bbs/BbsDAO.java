@@ -18,6 +18,12 @@ public class BbsDAO implements BoardDAO{
 	private final String NAMESPACE = "com.tm.cgv.bbs.BbsDAO.";
 	
 	
+	//bbs_seq.nextVal
+	public int boardCount() throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"boardCount");
+	}
+	
+	
 	//글 목록 리스트 조회
 	@Override
 	public List<BoardDTO> boardList(Pager pager) throws Exception {
@@ -30,6 +36,7 @@ public class BbsDAO implements BoardDAO{
 		return sqlSession.selectOne(NAMESPACE+"bbsSelect", no);
 	}
 
+	
 	//글 등록
 	@Override
 	public int boardWrite(BoardDTO boardDTO) throws Exception {

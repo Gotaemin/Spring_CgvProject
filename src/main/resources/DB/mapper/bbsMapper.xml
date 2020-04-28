@@ -9,8 +9,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		like '%' || #{search} || '%'	
 	</sql>
 
+	<select id="boardCount" resultType="Integer">
+		select bbs_seq.nextVal from dual
+	</select>
+
 	<insert id="bbsWrite" parameterType="BbsDTO">
-		insert into bbs values (bbs_seq.nextVal,#{title},sysdate,0,#{contents},#{id})
+		insert into bbs values (#{no},#{title},sysdate,0,#{contents},#{id})
 	</insert>
 
 	<delete id="bbsDelete" parameterType="Integer">
@@ -43,7 +47,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 					</otherwise>
 				</choose>
 				
-				<include refid="search"></include>  order by no desc)N) 
+				<include refid="search"></include>  
+			order by no desc)N) 
 		where R between #{startRow} and #{lastRow}
 	</select>
 	
