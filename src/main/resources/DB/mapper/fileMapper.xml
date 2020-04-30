@@ -8,5 +8,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="fileInsert" parameterType="FileInfoDTO">
 		insert into fileInfo values(file_seq.nextVal,#{no},#{fileName},#{oriName},#{type})
 	</insert>
+	
+	<select id="fileSelect" parameterType="Integer" resultType="FileInfoDTO">
+		select * from fileInfo where no = #{no}
+	</select>
 
 </mapper>

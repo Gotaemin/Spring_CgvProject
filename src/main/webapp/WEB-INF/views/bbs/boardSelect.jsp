@@ -88,8 +88,14 @@
 									<p class="tbl_info_left">[극장] ${bbsDTO.title}</p>
 									<p class="tbl_info_right">등록자 ${bbsDTO.id} 등록일 ${bbsDTO.hiredate} 조회수 ${bbsDTO.count}</p>
 								</div>
+								<div class="bbs_file">
+										첨부파일 : 
+										<div class="file" > ${fileInfoDTO.oriName}</div>
+								</div>
 								<div class="bbs_contents">
 										${bbsDTO.contents}
+										
+										
 								</div>
 								
 								<div class="bbs_btn">

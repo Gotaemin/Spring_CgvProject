@@ -20,11 +20,16 @@ var strByteLength = function(s, b, i, c) {
 textarea_l.addEventListener("keyup", function() {
 
 	var str = textarea_l.value.length;
-	console.log(str);
 
 	s_byte.innerText = strByteLength(textarea_l.value);
 	s_length.innerText = str;
 });
+
+
+var str = $("#textarea_l").val().length;
+
+$("#s_byte").text(strByteLength($("#textarea_l").val()))
+$("s_length").text(str);
 
 
 

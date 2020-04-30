@@ -15,4 +15,8 @@ public class FileInfoDAO {
 		return sqlSession.insert(NAMESPACE+"fileInsert", fileInfoDTO);
 	}
 	
+	public FileInfoDTO fileSelect(int no) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"fileSelect", no);
+	}
+	
 }

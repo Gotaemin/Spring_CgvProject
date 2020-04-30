@@ -136,7 +136,8 @@
 													<label>첨부파일</label>
 												</th>
 												<td colspan="3">
-													<input type="file" size="51" >
+<!-- 													<input type="file" size="51" value=""> -->
+													<p>${fileInfoDTO.oriName}<i id="" title="" class="remove fileDelete" style="font-weight: bold">x</i></p>
 												</td>
 											</tr>
 										</tbody>
@@ -166,8 +167,7 @@
 	<c:import url="../template/sidebar.jsp"></c:import>
 </div>
 
-<script type="text/javascript" src="../resources/js/bbsWrite.js"></script>
-<!-- <script type="text/javascript" src="../resources/js/bbsUpdate.js"></script> -->
+<script type="text/javascript" src="../resources/js/bbsUpdate.js"></script>
 
 
 </body>

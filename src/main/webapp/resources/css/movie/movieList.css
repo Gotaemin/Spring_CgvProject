@@ -215,10 +215,17 @@ button{
 	margin-top: 30px;
 }
 
+.sect-movie-chart > ol:first-child{
+	margin-top: 0;
+}
+
+.sect-movie-chart > ol:first-child .rank{
+	background: #e71a0f;
+}
 
 .sect-movie-chart > ol {
+	margin-top:30px;
 	margin-left: -64px;
-	margin-bottom:30px;
 	border-bottom: 3px solid #241d12;
 	padding-top: 0; 
 	height: 455px;
@@ -240,7 +247,7 @@ button{
 }
 
 .rank{
-	background: #e71a0f;
+	background: #333333;
 	display: block;
 	height: 28px;
 	margin-bottom: 4px;

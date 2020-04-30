@@ -37,6 +37,7 @@ public class BbsService implements BoardService{
 
 	@Override
 	public BoardDTO boardSelect(int no) throws Exception {
+		//조회수 증가
 		bbsDAO.countUpdate(no);
 		
 		return bbsDAO.boardSelect(no);

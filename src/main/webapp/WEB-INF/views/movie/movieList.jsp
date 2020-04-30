@@ -56,91 +56,58 @@
 				
 <!-- 			정렬부분 -->
 				<div class="sect-sorting">
-					<select name="order-type">
-						<option value="1" selected="selected">예매율순</option>
-						<option value="2">최신순</option>
-						<option value="3">관람객순</option>
+					<select id="select" name="kind">
+						<option title="1" value="rate" selected="selected">예매율순</option>
+						<option title="2" value="date">최신순</option>
+						<option title="3" value="title">제목순</option>
 					</select>
-					<button type="button" class="round gray">
+					<button id="btn-sort" type="button" class="round gray">
 						<span>GO</span>
 					</button>
 				</div>
 				
+				
+				
 <!-- 			리스트 출력부분 -->
 				<div class="sect-movie-chart">
-					<!-- 첫번째 행 -->
 					<ol>
-						<c:forEach begin="1" end="3" var="i">
-							<li>
-								<!-- 윗 부분 -->
-								<div class="box-image">
-									<strong class="rank">No.${i}</strong>
-									<a href="">
-										<span class="thumb-image">
-											<img alt="" src="../resources/images/movie/movieList/79273_320.jpg">
-											<span class="icon-grade grade-12">청소년 관람불가</span>
-										</span>
-									</a>
-									<span class="screentype"></span>
-								</div>
-								
-								<!-- 아래 부분 -->
-								<div class="box-contents">
-									<a href=""><strong class="title">제목</strong> </a>
-									<div class="score">
-										<strong class="percent">예매율<span>9.0%</span> </strong>
-										<div class="egg-gage small">
-											<span class="egg great"></span>
-											<span class="percent">75%</span>
-										</div>
+					<c:forEach var="list" items="${list}" varStatus="i">
+						<li>
+							<!-- 윗 부분 -->
+							<div class="box-image">
+								<strong class="rank">No.${i.index+1}</strong> 
+								<a href=""> 
+									<span class="thumb-image"> 
+										<img alt="이미지"	src="../resources/images/movie/movieList/filmCover/${list.imageName}">
+										<span class="icon-grade grade-12">청소년 관람불가</span>
+									</span>
+								</a> 
+								<span class="screentype"></span>
+							</div> <!-- 아래 부분 -->
+							<div class="box-contents">
+								<a href=""><strong class="title">${list.title}</strong> </a>
+								<div class="score">
+									<strong class="percent">예매율<span>${list.rate}%</span></strong>
+									<div class="egg-gage small">
+										<span class="egg great"></span> <span class="percent">75%</span>
 									</div>
-									<span class="text-info">
-										<strong>2020.04.15<span>개봉</span></strong>
-									</span>
-									<span class="like">
-										<a href="" class="link-reservation">예매</a>
-									</span>
-								</div>						
-							</li>
-						</c:forEach>
+								</div>
+								<span class="text-info"> 
+									<strong>${list.openDate}<span>개봉</span></strong>
+								</span> 
+								<span class="like"> 
+<%-- 									<a href="./movieReservation?mNum=${list.mNum}" class="link-reservation">예매</a> --%>
+									<a href="./movieReservation" class="link-reservation">예매</a>
+								</span>
+							</div>
+						</li>
+								
+						<c:if test="${i.index == 2}">
+							</ol><ol>
+						</c:if>
+					</c:forEach>
 					</ol>
 					
-					<!-- 두번째행 -->
-					<ol>
-						<c:forEach var="i" begin="4" end="7">
-							<li>
-								<!-- 윗 부분 -->
-								<div class="box-image">
-									<strong class="rank">No.${i}</strong>
-									<a href="">
-										<span class="thumb-image">
-											<img alt="" src="../resources/images/movie/movieList/79273_320.jpg">
-											<span class="icon-grade grade-12">청소년 관람불가</span>
-										</span>
-									</a>
-									<span class="screentype"></span>
-								</div>
-								
-								<!-- 아래 부분 -->
-								<div class="box-contents">
-									<a href=""><strong class="title">제목</strong> </a>
-									<div class="score">
-										<strong class="percent">예매율<span>9.0%</span> </strong>
-										<div class="egg-gage small">
-											<span class="egg great"></span>
-											<span class="percent">75%</span>
-										</div>
-									</div>
-									<span class="text-info">
-										<strong>2020.04.15<span>개봉</span></strong>
-									</span>
-									<span class="like">
-										<a href="" class="link-reservation">예매</a>
-									</span>
-								</div>						
-							</li>
-						</c:forEach>
-					</ol>
 					
 					<div class="chart-ad">
 						<div class="box-com">
@@ -169,11 +136,59 @@
 	<!-- 푸터 -------------------------------------------------------------------------------------->
 	<c:import url="../template/footer.jsp"></c:import>
 	
-	
-	
 	<!-- 사이드바 ---------------------------------------------------------------------------------------------->
 	<c:import url="../template/sidebar.jsp"></c:import>
 </div>
+<script type="text/javascript">
+
+	$("#btn-sort").click(function(){
+		var kind = $("#select").val();
+		
+		location.href = "./movieList?kind="+kind;
+	});
+
+	
+	
+	
+	$(document).ready(function() {
+		//url로 들어오는 파라미터값 읽어들이기
+		function getParam(sname) {
+
+		    var params = location.search.substr(location.search.indexOf("?") + 1);
+		    var sval = "";
+		    params = params.split("&");
+		    for (var i = 0; i < params.length; i++) {
+		        temp = params[i].split("=");
+		        if ([temp[0]] == sname) { sval = temp[1]; }
+		    }
+		    return sval;
+		}
+		
+		//읽어들인 파라미터값으로 selected값 변경
+		$("select option[value='"+getParam("kind") +"']").attr("selected", true);
+	});
+</script>
+
+
+
+
+
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

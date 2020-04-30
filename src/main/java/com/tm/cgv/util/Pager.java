@@ -76,6 +76,10 @@ public class Pager {
 		this.curPage = curPage;
 	}
 
+	public void setStartNum(long startNum) {
+		this.startNum = startNum;
+	}
+
 	public Long getPerPage() {
 		if(this.perPage == null) {
 			perPage = 10L;

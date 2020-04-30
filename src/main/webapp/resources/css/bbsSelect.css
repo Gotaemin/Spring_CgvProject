@@ -30,6 +30,22 @@
 	float: right;
 }
 
+.bbs_file{
+	text-align: right;
+	margin-right: 8px;
+	margin-top: 5px 
+}
+
+.file{
+	display: inline-block;
+}
+
+.file:hover{
+	cursor: pointer;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
 .bbs_contents{
 	border-bottom: 1px solid #b8b6aa;
 	padding: 35px 13px;

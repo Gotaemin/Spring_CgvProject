@@ -3,30 +3,32 @@ package com.tm.cgv.movie;
 import java.sql.Date;
 
 public class MovieDTO {
-	private String imageName;
+	private long mNum;
 	private String title;
 	private double rate;
-	private Date releaseDate;
 	private String director;
 	private String actor;
 	private String genre;
-	private String ageLimit;
-	private String runningTime;
+	private int ageLimit;
+	private int runningTime;
+	private Date openDate;
 	private String contents;
-	private long visitor;
+	private String imageName;
 	
 	
-	public long getVisitor() {
-		return visitor;
-	}
-	public void setVisitor(long visitor) {
-		this.visitor = visitor;
-	}
+	
+	
 	public String getImageName() {
 		return imageName;
 	}
 	public void setImageName(String imageName) {
 		this.imageName = imageName;
+	}
+	public long getmNum() {
+		return mNum;
+	}
+	public void setmNum(long mNum) {
+		this.mNum = mNum;
 	}
 	public String getTitle() {
 		return title;
@@ -39,12 +41,6 @@ public class MovieDTO {
 	}
 	public void setRate(double rate) {
 		this.rate = rate;
-	}
-	public Date getReleaseDate() {
-		return releaseDate;
-	}
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
 	}
 	public String getDirector() {
 		return director;
@@ -64,17 +60,23 @@ public class MovieDTO {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public String getAgeLimit() {
+	public int getAgeLimit() {
 		return ageLimit;
 	}
-	public void setAgeLimit(String ageLimit) {
+	public void setAgeLimit(int ageLimit) {
 		this.ageLimit = ageLimit;
 	}
-	public String getRunningTime() {
+	public int getRunningTime() {
 		return runningTime;
 	}
-	public void setRunningTime(String runningTime) {
+	public void setRunningTime(int runningTime) {
 		this.runningTime = runningTime;
+	}
+	public Date getOpenDate() {
+		return openDate;
+	}
+	public void setOpenDate(Date openDate) {
+		this.openDate = openDate;
 	}
 	public String getContents() {
 		return contents;
@@ -82,6 +84,8 @@ public class MovieDTO {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
+	
+	
 	
 	
 }
