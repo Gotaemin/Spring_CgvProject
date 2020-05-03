@@ -80,6 +80,10 @@ public class Pager {
 		this.startNum = startNum;
 	}
 
+	public void setStartRow(long startRow) {
+		this.startRow = startRow;
+	}
+
 	public Long getPerPage() {
 		if(this.perPage == null) {
 			perPage = 10L;

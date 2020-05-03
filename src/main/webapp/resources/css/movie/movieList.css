@@ -5,6 +5,7 @@ a{
 	color: inherit;
 }
 
+
 p{
 	height: 10px;
 	width: 500px;
@@ -472,6 +473,30 @@ dl:after, ul:after, li:after{
 }
 
 
+.btn-more{
+	float: right;
+	margin-top: 10px;
+	
+	font-size: 13px;
+	font-weight:bold;
+	color:#333333;
+	height:20px;
+	line-height: 20px;
+	
+	cursor: pointer;
+	
+}
+
+
+.link-more{
+	display: inline-block;
+	width: 20px;
+    height: 19px;
+    vertical-align:middle;
+    background: url(../../images/sprite_btn.png) -50px -62px no-repeat;
+    font: 0/0 a;
+    zoom: 1;
+}
 
 
 

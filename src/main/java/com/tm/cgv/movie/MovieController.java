@@ -17,16 +17,33 @@ public class MovieController {
 	@Autowired
 	public MovieService movieService;
 	
+	
+	@GetMapping("movieListMore")
+	public ModelAndView movieListMore(Pager pager) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		System.out.println(pager.getStartRow());
+		
+		List<MovieDTO> list =  movieService.movieListMore(pager);
+		if(list != null) {
+			
+			mv.addObject("list", list);
+			mv.setViewName("movie/ajax/movieListMore");
+		}
+		return mv;
+		
+	}
+	
 	@GetMapping("movieList")
 	public ModelAndView movieList(Pager pager) throws Exception{
 		ModelAndView mv = new ModelAndView();
+		
 		
 		List<MovieDTO> list =  movieService.movieList(pager);
 		if(list != null) {
 			mv.addObject("list", list);
 			mv.setViewName("movie/movieList");
 		}
-		
 		return mv;
 	}
 	

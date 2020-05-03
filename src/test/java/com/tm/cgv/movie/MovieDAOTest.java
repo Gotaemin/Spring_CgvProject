@@ -23,5 +23,12 @@ public class MovieDAOTest extends AbstractTestCase{
 		assertNotNull(list);
 	
 	}
-
+	
+	@Test
+	public void movieListMore() throws Exception{
+		Pager pager = new Pager();
+		pager.setPerPage(8L);
+		
+	}
+ 
 }

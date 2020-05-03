@@ -5,6 +5,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
  <mapper namespace="com.tm.cgv.movie.MovieDAO">
+ 	
+ 	
+ 	<select id="movieNumCount" resultType="Long">
+ 		select count(mnum) from movieinfo
+ 	</select>
+ 
  	<select id="movieList" parameterType="Pager" resultType="MovieDTO">
  		select * from 
  		(select N.*, rownum R from

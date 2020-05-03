@@ -13,6 +13,15 @@ public class MovieService {
 	@Autowired
 	private MovieDAO movieDAO;
 	
+	
+	public List<MovieDTO> movieListMore(Pager pager) throws Exception{
+		
+		long count = movieDAO.movieNumCount();
+		pager.setLastRow(count);
+		
+		return movieDAO.movieList(pager);
+	}
+	
 	public List<MovieDTO> movieList(Pager pager) throws Exception{
 		
 		pager.setPerPage(7L);
@@ -20,6 +29,7 @@ public class MovieService {
 		
 		//ajax로 more버튼 클릭시 curPage를8로 perPage를 totalCount로 변경해주어야됨
 		//totalCount는 Mapper생성해야 함
+		
 		
 		return movieDAO.movieList(pager);
 	}

@@ -108,6 +108,8 @@
 					</c:forEach>
 					</ol>
 					
+					<div class="sect-movie-chart" id="list-more"></div>
+					
 					
 					<div class="chart-ad">
 						<div class="box-com">
@@ -126,7 +128,10 @@
 						</div>
 					</div>
 				</div>
-			
+			<div class="btn-more" id="btn-more">더보기
+				<i class="link-more"></i>
+			</div>
+				
 			</div>
 			
 		</div>
@@ -139,7 +144,23 @@
 	<!-- 사이드바 ---------------------------------------------------------------------------------------------->
 	<c:import url="../template/sidebar.jsp"></c:import>
 </div>
+
+
 <script type="text/javascript">
+
+	$("#btn-more").click(function() {
+		var kind = $("#select").val();
+		
+		$.get("./movieListMore?startRow=8&kind="+kind,function(result){
+
+			console.log("result"+result);
+			$("#list-more").html(result);
+			
+			$("#btn-more").css("visibility","hidden");
+		});
+		
+	});
+
 
 	$("#btn-sort").click(function(){
 		var kind = $("#select").val();
