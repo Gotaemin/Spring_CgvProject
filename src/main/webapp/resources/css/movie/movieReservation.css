@@ -100,27 +100,27 @@ a{
 }
 
 #ticket .section-movie{
-/* 	width: 284px; */
-	width: 282px;
-	border: 1px solid black;
+	width: 284px;
+/* 	width: 282px; */
+/* 	border: 1px solid black; */
 }
 
 #ticket .section-theather{
-/* 	width: 265px; */
-	width: 263px;
-	border: 1px solid black;
+	width: 265px;
+/* 	width: 263px; */
+/* 	border: 1px solid black; */
 }
 
 #ticket .section-date {
-/* 	width: 91px; */
-	width: 89px;
-	border: 1px solid black;
+	width: 91px;
+/* 	width: 89px; */
+/* 	border: 1px solid black; */
 }
 
 #ticket .section-time{
-/* 	width: 346px; */
-	width: 345px;
-	border: 1px solid black;
+	width: 346px;
+/* 	width: 345px; */
+/* 	border: 1px solid black; */
 }
 
 
@@ -188,6 +188,7 @@ a{
 }
 
 .tabmenu{
+/* 	visibility:hidden; */
 	z-index: 1;
 	position: relative;
 	height: 38px;
@@ -231,7 +232,6 @@ a{
 }
 
 
-
 /* 메뉴 정렬 */
 .sortmenu{
 	float: left;
@@ -241,7 +241,6 @@ a{
 	line-height: 32px;
 	font-size: 12px;
 	background: url("../../images/movie/movieReservation/sortmenu_border_bottom.png") repeat-x bottom;
-	
 }
 
 .sortmenu .button{
@@ -357,13 +356,246 @@ a{
 
 .nano .slider-y{
 	width: 6px;
+	height: 50px;
 }
 
 
 
 
+/* section-theater *****************/
+#ticket .section-theater .col-body  .tabmenu .button.menu1{
+	width: 45px;
+}
+
+.theater-select .button.menu2{
+	width: 170px;
+}
+
+.section-theater .col-body{
+	height: 560px;
+}
+
+.section-theater .col-body .theater-select{
+	float: left;
+    width: 235px;
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.section-theater .col-body .theater-select .tabmenu{
+	float: left;
+    width: 100%;
+}
+
+.section-theater .col-body .theater-select .theater-list{
+	position: relative;
+    float: left;
+    width: 100%;
+    height: 388px;
+    margin-top: 3px;
+}
+
+.section-theater .col-body .theater-select .theater-list .theater-area-list{
+	float: left;
+    width: 109px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.section-theater .col-body .theater-select .theater-list .theater-area-list > ul{
+	width: 100%;
+    height: 100%;
+}
+
+.section-theater .col-body .theater-select .theater-list .theater-area-list > ul > li{
+	clear: both;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 1px;
+}
 
 
+.section-theater .col-body .theater-select .theater-list .theater-area-list > ul > li.selected > a{
+	background: url(http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/step1/theaterarealist_item_selected.png) no-repeat right;
+    background-color: transparent;
+}
+
+#ticket .section-theater .col-body .theater-select .theater-list .theater-area-list > ul > li > a{
+	display: block;
+    color: #333333;
+    font-size: 12px;
+    letter-spacing: -0.1em;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+    padding-left: 6px;
+    padding-right: 8px;
+    background-color: #e6e4d9;
+}
+
+#ticket .section-theater .col-body .theater-select .theater-list .theater-area-list > ul > li.selected > div{
+	display: block;
+}
+
+#ticket .section-theater .col-body .theater-select .theater-list .theater-area-list > ul > li > div{
+	display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 124px;
+    height: 100%;
+}
+
+#ticket .section-theater .col-body .theater-select .theater-list .area_theater_list ul{
+	width: 154px;
+}
+
+#ticket .section-theater .col-body .theater-select .theater-list .area_theater_list ul li{
+	clear: both;
+    overflow: hidden;
+    float: left;
+    width: 114px;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 1px;
+}
+
+#ticket .section-theater .col-body .theater-select .theater-list .area_theater_list ul li a{
+	display: block;
+    color: #333333;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+
+
+
+/* section-date **********************/
+
+#ticket .section-date .col-body .date-list{
+	float: left;
+    width: 74px;
+    height: 96%;
+    margin-top: 19px;
+    margin-left: 7px;
+    
+/*     border: 1px solid black; */
+}
+
+#ticket .section-date .col-body .date-list ul{
+	width: 104px;
+}
+
+#ticket .section-date .col-body .date-list ul li.month{
+	clear: both;
+    overflow: hidden;
+    float: left;
+    width: 64px;
+    height: 67px;
+    margin-bottom: 1px;
+    margin-left: 7px;
+}
+
+#ticket .section-date .col-body .date-list ul li.month span.year{
+	display: block;
+    margin-top: 12px;
+    text-align: center;
+    color: #666;
+    font-size: 11px;
+    font-family: Verdana;
+    font-weight: bold;
+    line-height: 11px;
+}
+
+#ticket .section-date .col-body .date-list ul li.month span.month{
+	display: block;
+    margin-top: 3px;
+    text-align: center;
+    color: #666;
+    font-size: 30px;
+    font-family: Verdana;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+#ticket .section-date .col-body .date-list ul li.day{
+	margin-left: 10px;
+    width: 60px;
+}
+
+#ticket .section-date .col-body .date-list ul li.day{
+	position: relative;
+    clear: both;
+    float: left;
+    width: 64px;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 1px;
+}
+
+#ticket .section-date .col-body .date-list ul li.day.dimmed a{
+	opacity: 0.25;
+    filter: alpha(opacity=25);
+}
+
+
+#ticket .section-date .col-body .date-list ul li.day a{
+	display: block;
+    height: 100%;
+    vertical-align: middle;
+    padding-left: 8px;
+    padding-right: 7px;
+    margin-left: 0;
+}
+
+#ticket .section-date .col-body .date-list ul li.day a span.dayweek{
+	float: left;
+    color: #333;
+    font-size: 12px;
+    padding-top: 2px;
+    cursor: pointer;
+}
+
+#ticket .section-date .col-body .date-list ul li.day a span.day{
+	float: right;
+    color: #333;
+    font-family: Verdana;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#ticket .section-date .col-body .date-list ul li.day {
+    margin-left: 10px;
+    width: 60px;
+}
+
+#ticket .section-date .col-body .date-list ul li.day.day-sat a span.dayweek {
+    color: #31597e;
+}
+
+#ticket .section-date .col-body .date-list ul li.day.day-sat a span.day {
+    color: #31597e;
+}
+
+#ticket .section-date .col-body .date-list ul li.day.day-sun a span.dayweek {
+    color: #ad2727;
+}
+
+#ticket .section-date .col-body .date-list ul li.day.day-sun a span.day {
+    color: #ad2727;
+}
 
 
 

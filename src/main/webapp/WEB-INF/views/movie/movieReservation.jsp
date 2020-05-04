@@ -107,7 +107,7 @@
 						</div>
 						
 						<!-- 극장선택 -->
-						<div class="section section-theather">
+						<div class="section section-theater">
 							<div class="col-head">
 								<h3 class="sreader">극장</h3>
 							</div>
@@ -116,8 +116,10 @@
 									<div class="tabmenu">
 										<span class="side on"></span>
 										<a href="#" class="button menu1 selected">전체</a>
+										<span class="side on"></span>
+										<div class="button menu2"></div>
 									</div>
-									<div class="theater-list">
+									<div class="theater-list nano has-scrollbar has-scrollbar-y">
 										<div class="theater-area-list">
 											<ul>
 												<li class="selected">
@@ -125,24 +127,38 @@
 														<span class="name">서울</span>
 														<span class="count">(30)</span>
 													</a>
+													<div class="area_theater_list nano has-scrollbar has-scrollbar-y">
+														<ul class="content scroll-y">
+														<c:forEach begin="1" end="13">
+															<li>
+																<a href="#">
+																	강남
+																	<span class="sreader"></span>
+																</a>
+															</li>
+														</c:forEach>
+														</ul>
+														<div class="pane pane-y">
+															<div class="slider slider-y"></div>
+														</div>
+													</div>
 												</li>
-											</ul>
-										</div>
-										<div class="theater-cgv-list nano">
-											<ul class="content scroll-y">
-												<li>
+												<c:forEach begin="1" end="10">
+													<li>
 													<a href="#">
-														강남
-														<span class="sreader"></span>
+														<span class="name">경기</span>
+														<span class="count">(44)</span>
 													</a>
 												</li>
-											
+												</c:forEach>
+												
 											</ul>
-											<div class="pane pane-y">
-												<div class="slider slider-y"></div>
+											<div class="pane pane-y" style="display: block; opacity: 1; visibility: visible;">
+												<div class="slider slider-y" style="height: 50px; top: 0px;"></div>
 											</div>
 										</div>
 									</div>
+									
 								</div>
 							</div>
 						</div>
@@ -151,7 +167,57 @@
 						<!-- 날짜선택 -->
 						<div class="section section-date">
 							<div class="col-head"></div>
-							<div class="col-body"></div>
+							<div class="col-body" style="height: 560px;">
+								<div class="date-list nano has-scrollbar has-scrollbar-y" id="date_list">
+									<ul class="content scroll-y" tabindex="-1" style="right: -21px;">
+										<li class="month dimmed">
+											<span class="year">2020</span>
+											<span class="month">5</span>
+										</li>
+										
+										<c:forEach begin="1" end="5">
+											<li data-index="0" class="day dimmed">
+												<a href="#">
+													<span class="dayweek">월</span>
+													<span class="day">4</span>
+													<span class="sreader">선택불가</span>
+												</a>
+											</li>
+											<li data-index="0" class="day">
+												<a href="#">
+													<span class="dayweek">화</span>
+													<span class="day">5</span>
+													<span class="sreader"></span>
+												</a>
+											</li><li data-index="0" class="day">
+												<a href="#">
+													<span class="dayweek">월</span>
+													<span class="day">4</span>
+													<span class="sreader">선택불가</span>
+												</a>
+											</li>
+											<li data-index="0" class="day day-sat">
+												<a href="#">
+													<span class="dayweek">토</span>
+													<span class="day">4</span>
+													<span class="sreader">선택불가</span>
+												</a>
+											</li>
+											<li data-index="0"  class="day day-sun">
+												<a href="#">
+													<span class="dayweek">일</span>
+													<span class="day">4</span>
+													<span class="sreader">선택불가</span>
+												</a>
+											</li>
+										</c:forEach>
+										
+									</ul>
+									<div class="pane pane-y" style="display: block; opacity: 1; visibility: visible;">
+										<div class="slider slider-y" style="height: 50px; top: 0px;"></div>
+									</div>
+								</div>
+							</div>
 						</div>
 						
 						
