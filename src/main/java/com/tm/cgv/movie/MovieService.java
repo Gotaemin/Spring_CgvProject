@@ -13,6 +13,9 @@ public class MovieService {
 	@Autowired
 	private MovieDAO movieDAO;
 	
+	public List<MovieDTO> movieListAll(MovieDTO movieDTO) throws Exception{
+		return movieDAO.movieListAll(movieDTO);
+	}
 	
 	public List<MovieDTO> movieListMore(Pager pager) throws Exception{
 		
@@ -29,7 +32,6 @@ public class MovieService {
 		
 		//ajax로 more버튼 클릭시 curPage를8로 perPage를 totalCount로 변경해주어야됨
 		//totalCount는 Mapper생성해야 함
-		
 		
 		return movieDAO.movieList(pager);
 	}

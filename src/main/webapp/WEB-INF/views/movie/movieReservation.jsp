@@ -8,16 +8,37 @@
 <link href="${pageContext.request.contextPath}/resources/css/layout.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/movie/movieReservation.css" rel="stylesheet" type="text/css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
 
 	<div class="root">
 		<c:import url="../template/header.jsp"></c:import>
-
-		<h1>영화예매 페이지</h1>
+		<div class="c_nav">
+				<div class="nav_linemap">
+					<ul>
+						<li>
+							<a href="../">
+								<img alt="go to Home" src="../resources/images/login/btn_home.png">					
+							</a>
+						</li>
+						<li>
+							<a href="">예매</a>
+						</li>
+						<li>
+							<a href="">빠른예매</a>
+						</li>
+						<li class="last">
+							무비차트
+						</li>
+					</ul>
+				</div>
+			</div>
 
 		<div id="container">
+			
+		
 			<div id="ticket">
 			
 				<!-- navigation -->
@@ -52,49 +73,30 @@
 										<span class="side on"></span>
 										<a href="#" class="button menu1 selected">전체</a>
 										<span class="side on"></span>
-										<div class="button menu2"></div>
+										<div class="button menu2">
+											<div class="underline"></div>
+										</div>
 									</div>
 									
 									<!-- 메뉴 (정렬방법 선택) -->
 									<div class="sortmenu">
-										<a href="#" class="button btn-rank selected">예매율순</a>
-										<a href="#" class="button btn-abc">가나다순</a>
+										<a class="button btn-rank selected">예매율순</a>
+										<a class="button btn-abc">가나다순</a>
 									</div>
+									
 									
 									<!-- 리스트 출력부분 -->
 									<div class="movie-list nano">
-										<ul class="content scroll-y" style="right: -21px;">
-										<c:forEach begin="1" end="10">
-											<li class="rating-all">
-												<a href="#" title="제목" alt="제목">
-													<span class="icon">&nbsp;</span>
-													<span class="text">제목</span>
-													<span class="sreader"></span>
-												</a>
-											</li>
-											<li class="rating-15">
-												<a href="#" title="제목" alt="제목">
-													<span class="icon">&nbsp;</span>
-													<span class="text">제목</span>
-													<span class="sreader"></span>
-												</a>
-											</li>
-											<li class="rating-12">
-												<a href="#" title="제목" alt="제목">
-													<span class="icon">&nbsp;</span>
-													<span class="text">제목</span>
-													<span class="sreader"></span>
-												</a>
-											</li>
-											<li class="rating-18">
-												<a href="#" title="제목" alt="제목">
-													<span class="icon">&nbsp;</span>
-													<span class="text">제목</span>
-													<span class="sreader"></span>
-												</a>
-											</li>
-										
-										</c:forEach>
+										<ul id="movie-list-content" class="content scroll-y" style="right: -21px;">
+											<c:forEach var="list" items="${list}">
+												<li class="rating-${list.ageLimit}">
+													<a href="#" title="제목" alt="제목">
+														<span class="icon">&nbsp;</span>
+														<span class="text">${list.title}</span>
+														<span class="sreader"></span>
+													</a>
+												</li>
+											</c:forEach>
 											
 										</ul>
 										
@@ -117,7 +119,9 @@
 										<span class="side on"></span>
 										<a href="#" class="button menu1 selected">전체</a>
 										<span class="side on"></span>
-										<div class="button menu2"></div>
+										<div class="button menu2">
+											<div class="underline"></div>
+										</div>
 									</div>
 									<div class="theater-list nano has-scrollbar has-scrollbar-y">
 										<div class="theater-area-list">
@@ -224,7 +228,59 @@
 						<!-- 시간선택 -->
 						<div class="section section-time">
 							<div class="col-head"></div>
-							<div class="col-body"></div>
+							<div class="col-body" style="height: 560px;">
+								<div class="time-option">
+									<span class="morning">조조</span>
+									<span class="night">심야</span>
+								</div>
+								<div class="placeholder">영화, 극장, 날짜를 선택해주세요.</div>
+								<div class="time-list nano has-scrollbar">
+									<div class="content scroll-y" tabindex="-1" style="right: -21px;">
+										<div class="theater">
+											<span class="title">
+												<span class="name">2D</span>
+												<span class="floor">2관 3층</span>
+												<span class="seatcount">(총153석)</span>
+											</span>
+											<ul>
+												<li>
+													<a class="button" href="#" title="">
+														<span class="time"><span>12:00</span></span>
+														<span class="count">92석</span>
+														<span class="sreader mod"> 선택불가</span>
+													</a>
+												</li>
+												<li class="disabled">
+													<a class="button" href="#" title="">
+														<span class="time"><span>12:00</span></span>
+														<span class="count">예매종료</span>
+														<span class="sreader mod"> 선택불가</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="theater">
+											<span class="title">
+												<span class="name">2D</span>
+												<span class="floor">2관 3층</span>
+												<span class="seatcount">(총153석)</span>
+											</span>
+											<ul>
+												<c:forEach begin="1" end="5">
+													<li>
+													<a class="button" href="#" title="">
+														<span class="time"><span>12:00</span></span>
+														<span class="count">92석</span>
+														<span class="sreader mod"> 선택불가</span>
+													</a>
+												</li>
+												</c:forEach>
+												
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						
 					</div>
@@ -233,9 +289,61 @@
 		
 		</div>
 		
+		
+		
+		
 		<!-- 선택내용 출력,좌선선택 페이지로 이동버튼 출력부분 -->
 		<div class="ticket_tnb">
-			
+			<div id="ticket_tnb" class="tnb_container ">
+				<div class="tnb step1">
+					<div class="info movie">
+						<span class="movie_poster">
+							<img src="" alt="포스터" style="display: none;"> 			<!-- display: inline; -->
+						</span>
+						<div class="row movie_title colspan2" style="display: none;">		 <!-- style="display: block;" -->
+							<span class="data letter-spacing-min ellipsis-line2">
+								<a href="#" target="_blank" title="어벤져스-엔드게임">어벤져스</a>
+							</span>
+						</div>
+						<div class="row movie_type" style="display: none;"> 						<!-- style="display: block;" -->
+							<span class="data ellipsis-line1" title="2D">2D(히어로즈 기획전)</span>
+						</div>
+						<div class="row movie_rating" style="display: none;"> 					<!-- style="display: block;" -->
+							<span class="data" title="12세 관람가">12세 관람가</span>
+						</div>
+						<div class="placeholder" title="영화선택"></div> <!-- style="display: none;" -->
+					</div>
+					
+					
+					
+					<div class="info theater">
+						<div class="row name" style="display: none;"> <!-- style="display: block;" -->
+							<span class="header">극장</span>
+							<span class="data letter-spacing-min ellipsis-line1"><a href="#" target="_blank" title="CGV 구로">CGV 구로 &gt; </a></span>
+						</div>
+						<div class="row date" style="display: none;" > <!-- style="display: block;" -->
+ 							<span class="header">일시</span>
+							<span class="data" title="2020.5.5(화) 20:00">2020.5.5(화) 20:00</span>
+						</div>
+						<div class="row screen" style="display: none;"> <!-- style="display: block;" -->
+							<span class="header">상영관</span>
+							<span class="data" title="8관[COMFORT SEAT](Laser) 8층">8관[COMFORT SEAT](Laser) 8층</span>
+						</div>
+						<div class="row number" style="display: none;"> <!-- style="display: block;" -->
+							<span class="header">인원</span>
+							<span class="data"></span>
+						</div>
+						<div class="placeholder" title="극장선택" ></div> <!-- style="display: none;" -->
+					</div>
+					<div class="info path">
+						<div class="row colspan4">
+							<span class="path-step2" title="좌석선택">&nbsp;</span>
+							<span class="path-step3" title="결제">&nbsp;</span>
+						</div>
+					</div>
+					<a class="btn-right on" id="tnb_step_btn_right" href="#" title="좌석선택"></a>
+				</div>
+			</div>
 		</div>
 
 
@@ -247,5 +355,31 @@
 		<c:import url="../template/sidebar.jsp"></c:import>
 	</div>
 
+<script type="text/javascript" src="../resources/js/movie/movieReservation.js"></script>
+
+
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

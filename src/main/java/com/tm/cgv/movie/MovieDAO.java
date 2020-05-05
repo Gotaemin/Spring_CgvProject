@@ -23,5 +23,9 @@ public class MovieDAO {
 	public List<MovieDTO> movieList(Pager pager) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"movieList", pager);
 	}
+	
+	public List<MovieDTO> movieListAll(MovieDTO movieDTO) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"movieListAll",movieDTO);
+	}
 
 }

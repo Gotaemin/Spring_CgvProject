@@ -5,6 +5,14 @@ a{
 }
 
 
+body{
+	color: #333;
+    font-family: 'Tahoma','돋움',dotum,Nanum Gothic,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
 #container{
 	position: relative;
 	margin: 0 auto;
@@ -15,7 +23,6 @@ a{
 #ticket{
 	position: relative;
 }
-
 
 
 
@@ -118,8 +125,8 @@ a{
 }
 
 #ticket .section-time{
-	width: 346px;
-/* 	width: 345px; */
+/* 	width: 346px; */
+	width: 356px;
 /* 	border: 1px solid black; */
 }
 
@@ -224,13 +231,18 @@ a{
 	line-height: 28px;
 	color: #333;
 	font-size: 12px;
-	background: url("../../images/movie/movieReservation/tabmenu_body_off.png") repeat-x left;
+/* 	background: url("../../images/movie/movieReservation/tabmenu_body_off.png") repeat-x left; */
 }
 
 .button.menu2{
 	width: 180px;
+
 }
 
+.underline{
+	height:26px;
+	border-bottom: 2px solid black;
+}
 
 /* 메뉴 정렬 */
 .sortmenu{
@@ -250,6 +262,7 @@ a{
 	line-height: 32px;
 	color: #666;
 	padding: 0 5px;
+	cursor: pointer;
 }
 
 .sortmenu .button.selected{
@@ -276,6 +289,11 @@ a{
 /* 	border: 1px solid black; */
 }
 
+/* .movie-list > ul::-webkit-scrollbar-thumb{ */
+/* 	height: 50px; */
+/* 	background-color: #2f3542; */
+/* } */
+
 .content.scroll-y{
 	overflow-x: hidden; 
 }
@@ -286,7 +304,7 @@ a{
 	right: 0;
 	bottom: 0;
 	left: 0;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 .movie-list > ul > li {
@@ -418,10 +436,6 @@ a{
 }
 
 
-.section-theater .col-body .theater-select .theater-list .theater-area-list > ul > li.selected > a{
-	background: url(http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/step1/theaterarealist_item_selected.png) no-repeat right;
-    background-color: transparent;
-}
 
 #ticket .section-theater .col-body .theater-select .theater-list .theater-area-list > ul > li > a{
 	display: block;
@@ -438,6 +452,11 @@ a{
     background-color: #e6e4d9;
 }
 
+#ticket .section-theater .col-body .theater-select .theater-list .theater-area-list > ul > li.selected > a{
+	background: url("../../images/movie/movieReservation/theaterarealist_item_selected.png") no-repeat right;
+    background-color: transparent;
+}
+
 #ticket .section-theater .col-body .theater-select .theater-list .theater-area-list > ul > li.selected > div{
 	display: block;
 }
@@ -446,8 +465,8 @@ a{
 	display: none;
     position: absolute;
     top: 0;
-    right: 0;
-    width: 124px;
+    right: 5px;
+    width: 121px;
     height: 100%;
 }
 
@@ -598,6 +617,158 @@ a{
 }
 
 
+#ticket .section .col-body{
+	width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#ticket .step1 .section-time .col-body .time-option{
+	width: 306px;
+    height: 23px;
+    margin-left: 20px;
+    margin-top: 19px;
+    border-bottom: solid 2px #cfcdc3;
+}
+
+#ticket .step1 .section-time .col-body .time-option span.morning{
+	float: left;
+    height: 14px;
+    padding-left: 18px;
+    background: url("../../images/movie/movieReservation/icon_morning_night.png") no-repeat left;
+    background-position: 0 0;
+}
+
+#ticket .step1 .section-time .col-body .time-option span.night{
+	float: left;
+    height: 14px;
+    padding-left: 14px;
+    margin-left: 14px;
+    background: url("../../images/movie/movieReservation/icon_morning_night.png") no-repeat left;
+    background-position: 0 -20px;
+}
+
+#ticket .step1 .section-time .col-body .placeholder{
+	float: left;
+    width: 100%;
+    height: 416px;
+    line-height: 416px;
+    text-align: center;
+    color: #666;
+/*     display: none; */
+}
+
+#ticket .step1 .section-time .col-body .time-list{
+	display: none;
+	float: left;
+    width: 316px;
+    height: 88%;
+    margin-left: 20px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+#ticket .step1 .section-time .col-body .time-list .content{
+	width: 346px;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater:first-child{
+	margin-top: 0px;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater{
+	float: left;
+    width: 306px;
+    border-bottom: solid 2px #cfcdc3;
+    margin-top: 16px;
+    overflow: hidden;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater .title span.name{
+	color: #b54d15;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater .title span.floor{
+	color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater .title span.seatcount{
+	color: #666;
+    font-size: 12px;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater ul{
+	width: 309px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    overflow: hidden;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater ul li{
+	position: relative;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    padding-bottom: 9px;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater ul li a{
+	display: block;
+    vertical-align: middle;
+    width: 103px;
+    height: 25px;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater ul li a span.time{
+	width: 49px;
+    height: 23px;
+    line-height: 23px;
+    border: 1px solid #d6d3ce;
+    background-image: none;
+    background-color: #f2f0e5;
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Verdana;
+    float: left;
+    text-align: center;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater ul li.disabled a span.time{
+	color: #666;
+    text-decoration: line-through;
+    background-image: none;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater ul li a span.time span{
+	display: block;
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater ul li a span.count{
+	float: left;
+    width: 49px;
+    height: 20px;
+    line-height: 25px;
+    text-align: left;
+    color: #3d7c35;
+    font-size: 12px;
+    padding-left: 3px;
+    overflow: hidden;
+	    
+}
+
+#ticket .step1 .section-time .col-body .time-list .theater ul li.disabled a span.count{
+	color: #666;
+    padding-left: 1px;
+    background-image: none;
+}
+
 
 
 
@@ -619,27 +790,214 @@ a{
 	min-width: 996px;
 	height: 128px;
 	background-color: #1d1d1c;
-	
-	border: 1px solid black;
+}
+
+#ticket_tnb{
+	position: relative;
+    width: 100%;
+    min-width: 996px;
+    height: 128px;
+    background-color: #1d1d1c;
+}
+
+.tnb{
+	margin: 0 auto;
+    width: 996px;
+    height: 108px;
+    padding: 10px 0;
+    position: relative;
+/*     border: 1px solid white; */
+}
+
+.tnb .info.movie{
+	width: 210px;
+}
+
+.tnb .info{
+	float: left;
+    height: 108px;
+    padding-right: 2px;
+    background: url("../../images/movie/movieReservation/split.png") no-repeat right;
+    position: relative;
+    color: #cccccc;
+    font-size: 12px;
+}
+
+.tnb .info.movie .movie_poster{
+	float: left;
+    width: 74px;
+    height: 108px;
+    line-height: 108px;
+    margin-right: 11px;
+    overflow: hidden;
+/*     border: 1px solid white; */
+}
+
+.tnb .info .row.colspan2{
+	height: 40px;
+    overflow: hidden;
+}
+
+.tnb .info.movie .movie_poster img{
+	width: 100%;
+    vertical-align: middle;
+}
+
+.tnb .info.movie .row.movie_title{
+	margin-top: 14px;
+    display: none;
+}
+
+.tnb .info.movie .row{
+	float: right;
+}
+
+.tnb .info .row{
+	height: 20px;
+    line-height: 20px;
+}
+
+.tnb .info .row .data{
+	float: right;
+    font-weight: bold;
+}
+
+.tnb .info.movie .row .data{
+	width: 120px;
+    max-height: 40px;
+}
+
+.tnb .info .row .data.ellipsis-line2{
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+
+.tnb .info .row .data.letter-spacing-min{
+	letter-spacing: -0.5px;
+}
+
+.tnb .info .row .data a{
+	color: #cccccc;
+}
+
+.tnb .info .row .data.ellipsis-line1{
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.tnb .info.movie .placeholder{
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../images/movie/movieReservation/tnb_steps.png") no-repeat 50% 40px;
+}
+
+.tnb .info.theater{
+	width: 185px;
+}
+
+.tnb .info .row:first-child{
+	margin-top: 14px;
+}
+
+.tnb .info .row .header{
+	float: left;
+    padding-left: 10px;
+}
+
+.tnb .info.theater .row .data{
+	width: 135px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tnb .info.theater .placeholder{
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../images/movie/movieReservation/tnb_steps.png") no-repeat 50% -68px;
+}
+
+.tnb .info.path{
+	background: none;
 }
 
 
+.tnb .info .row.colspan4{
+	height: 80px;
+}
 
+.tnb .info.path .row .path-step2{
+	width: 111px;
+    height: 100%;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    margin-left: 23px;
+    background: url("../../images/movie/movieReservation/tnb_steps.png") no-repeat 50% -190px;
+}
 
+.tnb .info.path .row .path-step3{
+	    width: 71px;
+    height: 100%;
+    margin-left: 18px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    background: url("../../images/movie/movieReservation/tnb_steps.png") no-repeat 50% -298px;
+}
 
+.tnb .btn-right{
+	position: absolute;
+    top: 10px;
+    right: 0;
+    width: 106px;
+    height: 108px;
+}
 
+.tnb .btn-left, .tnb .btn-right{
+	background: url("../../images/movie/movieReservation/tnb_buttons.png") no-repeat;
+    background-position: 0 0;
+    overflow: hidden;
+    text-indent: -1000px;
+}
 
+.tnb.step1 .btn-right{
+	background-position: 0 -220px;
+}
 
+.tnb.step1 .btn-right.on{
+	background-position: -150px -220px;
+}
 
+#ticket .section-movie .col-body .movie-select .movie-list > ul > li.selected{
+	background-color: #333;
+    width: 242px;
+    height: 33px;
+    line-height: 33px;
+    border: 1px solid #000;
+}
 
+#ticket .section-movie .col-body .movie-select .movie-list > ul > li.selected a{
+	border: 1px solid #5c5c5c;
+    line-height: 29px;
+    height:29px;
+    margin: 1px;
+}
 
-
-
-
-
-
-
-
-
+#ticket .section-movie .col-body .movie-select .movie-list > ul > li.selected > a span.text{
+	color: #fff;
+}
 
 

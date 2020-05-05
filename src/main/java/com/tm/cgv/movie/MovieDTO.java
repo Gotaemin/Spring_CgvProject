@@ -9,11 +9,20 @@ public class MovieDTO {
 	private String director;
 	private String actor;
 	private String genre;
-	private int ageLimit;
+	private String ageLimit;
 	private int runningTime;
 	private Date openDate;
 	private String contents;
 	private String imageName;
+	
+	private String kind;
+
+	public String getKind() {
+		return kind;
+	}
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
 	
 	
 	
@@ -60,10 +69,10 @@ public class MovieDTO {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public int getAgeLimit() {
+	public String getAgeLimit() {
 		return ageLimit;
 	}
-	public void setAgeLimit(int ageLimit) {
+	public void setAgeLimit(String ageLimit) {
 		this.ageLimit = ageLimit;
 	}
 	public int getRunningTime() {

@@ -38,7 +38,6 @@ public class MovieController {
 	public ModelAndView movieList(Pager pager) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
-		
 		List<MovieDTO> list =  movieService.movieList(pager);
 		if(list != null) {
 			mv.addObject("list", list);
@@ -48,8 +47,34 @@ public class MovieController {
 	}
 	
 	@GetMapping("movieReservation")
-	public void movieReservation() throws Exception{
+	public ModelAndView movieReservation(MovieDTO movieDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
 		
+		//초기 영화목록 호출
+		List<MovieDTO> list = movieService.movieListAll(movieDTO);
+		
+		//초기 극장리스트 호출 
+		
+		//초기 날짜 리스트 호출
+		
+		mv.addObject("list", list);
+		mv.setViewName("movie/movieReservation");
+		
+		return mv;
+	}
+	
+	@GetMapping("movieListSort")
+	public ModelAndView movieListSort(MovieDTO movieDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		System.out.println("movieListSort_ kind : "+movieDTO.getKind());
+		
+		List<MovieDTO> list = movieService.movieListAll(movieDTO);
+		
+		mv.addObject("list", list);
+		mv.setViewName("movie/ajax/movieListSort");
+		
+		return mv;
 	}
 	
 	@GetMapping("movieSelect")

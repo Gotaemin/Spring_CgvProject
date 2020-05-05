@@ -4,6 +4,10 @@
 
 <ol style="height: 420px;">
 	<c:forEach var="list" items="${list}" varStatus="i">
+		<c:if test="${i.index ne 0 && i.index % 4 eq 0 }">
+			</ol><ol style="height: 420px;">
+		</c:if>
+	
 		<li>
 			<!-- 윗 부분 -->
 			<div class="box-image">
@@ -23,7 +27,7 @@
 						<span class="egg great"></span> <span class="percent">75%</span>
 					</div>
 				</div>
-				<span class="text-info"> <strong>${list.openDate}<span>개봉</span></strong>
+				<span class="text-info"> <strong>${list.openDate}<span>개봉${i.index}</span></strong>
 				</span> <span class="like"> <%-- 									
 					<a href="./movieReservation?mNum=${list.mNum}" class="link-reservation">예매</a> --%>
 					<a href="./movieReservation" class="link-reservation">예매</a>
@@ -31,9 +35,7 @@
 			</div>
 		</li>
 		
-		<c:if test="${i.index % 3 == 0 and i.index ne 0}">
-			</ol><ol style="height: 420px;">
-		</c:if>
+		
 
 	</c:forEach>
 </ol>
